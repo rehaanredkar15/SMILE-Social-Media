@@ -1,0 +1,136 @@
+
+   
+.TopBarContainer {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  margin-top: 10px;
+  top:0;
+  padding:0;
+  margin:0;
+  /* overflow-x:hidden; */
+  /* z-index: 999; */
+  display:flex;
+  flex-direction: row;
+  /* background-color:#6d6e6e; */
+  
+  
+}
+
+
+.topBarLeft {
+  flex: 2;
+}
+
+.logoImg{
+    margin-top: 18px;
+    height: 6rem;
+    width:8rem;
+    border-radius: 60%;
+    object-fit: cover;
+}
+
+
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  margin: top 2rem;
+  color: rgb(4, 65, 126);
+  cursor: pointer;
+}
+
+.topbarRight {
+  display: flex;
+     flex-direction: row;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+  }
+ 
+  
+.topBarLeft {
+    flex: 4;
+  }
+
+  .topBarCenter {
+    flex: 2;
+  }
+
+
+
+  .SearchBar {
+    width: 80%;
+    height: 40px;
+    background-color: #F4F5F8;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .SearchIcon {
+    font-size: 25px !important;
+    margin-left: 10px; 
+     padding-left: 10px;
+    color: #6d6e6e;
+  }
+  
+  .searchInput {
+    border: none;
+    padding-left: 10px;
+    width: 100%;
+    background-color: inherit;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .searchInput:focus {
+    outline: none;
+  }
+
+  .topbarLink {
+    margin-right: 10px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .topBarIcons {
+    display: flex;
+     flex-direction: row;
+     padding-top: 1rem;
+     color: #4195f5;
+
+  }
+  
+  .topBarIconItem {
+    margin-right: 15px;
+    cursor: pointer;
+    position: relative;
+  }
+
+ .topBarIconBadge{
+   width:14px;
+   height:14px;
+   background-color: rgb(250, 48, 48);
+   border-radius:50%;
+   color:white;
+   position:absolute;
+   top:-5px;
+   right:-5px;
+   display:flex;
+   align-items: center;
+   justify-content:center;
+ }
+
+
+.topbarImg { 
+  width: 50px;
+  height: 48px;
+  border-radius: 10%;
+  object-fit: cover;
+  cursor: pointer;
+  margin-right:20px;
+} 
