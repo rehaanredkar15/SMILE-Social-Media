@@ -1,5 +1,12 @@
 import React from 'react'
 import './Sidebar.css';
+import ContactsTwoToneIcon from '@mui/icons-material/ContactsTwoTone';
+import MapsHomeWorkTwoToneIcon from '@mui/icons-material/MapsHomeWorkTwoTone';
+import PhotoAlbumTwoToneIcon from '@mui/icons-material/PhotoAlbumTwoTone';
+import AccountCircleTwoToneIcon from '@mui/icons-material/AccountCircleTwoTone';
+import SettingsApplicationsTwoToneIcon from '@mui/icons-material/SettingsApplicationsTwoTone';
+import EventNoteTwoToneIcon from '@mui/icons-material/EventNoteTwoTone';
+
 
 
 const Sidebar = () => {
