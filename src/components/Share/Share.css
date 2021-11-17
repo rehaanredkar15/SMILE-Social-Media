@@ -1,0 +1,97 @@
+.shareProfileImg{
+   
+        height: 3rem;
+        width: 3rem;
+        object-fit: cover;
+        border-radius: 5px;
+
+    }
+
+    .shareWrapper{
+        background-color: white;
+        width:90%;
+        padding: 18px;
+        
+        border-radius: 15px;
+        box-shadow: -1px 3px 18px -14px rgb(175, 173, 173);
+    }
+
+    .shareTop {
+        width: 80%;
+        height: 40px;
+        background-color: inherit;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+    
+    
+    .shareInput {
+        margin-left: 5px;
+        border: none;
+        padding-left: 10px;
+        width: 100%;
+        background-color: inherit;
+        font-family: 'Poppins', sans-serif;
+      }
+      
+      .shareInput:focus {
+        outline: none;
+      }   
+     
+      .shareOptions{
+          display:flex; 
+          width:100%;
+          flex-direction: row;
+          justify-content: space-evenly;
+      }
+      
+      .shareOption{
+         
+        width: 50%;
+          display: flex;
+      }
+
+      .shareBottom{
+          width:100%;
+
+      }
+
+
+      .shareIcon{
+
+          padding-right: 2px;
+          justify-content: center;
+        }
+        
+
+        .shareOptionText{
+          font-size:15px;
+         
+      }
+ 
+      .PostButton{
+         
+        
+      }
+
+
+      .shareButton{
+          background-color: blue;
+          border-radius: 10px;
+          font-size: 15px;
+          font-family: Poppins;
+          display: flex;
+          color: white;
+          justify-content: center;
+          align-items: center;
+          border: none;
+          padding:5px;
+          height: 35px;
+          width: 70px;
+          cursor:pointer;
+
+      }
+
+
