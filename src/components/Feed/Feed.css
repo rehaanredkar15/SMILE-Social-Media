@@ -1,4 +1,28 @@
 .FeedContainer{
 
-    flex:5;
+    background-color: #F6F7F9;
+    /* background-color: wheat; */
+    flex:2.8;
+    /* width: 100%; */
+}
+
+.FeedWrapper{
+
+    max-width: 90%;
+    padding:20px;
+}
+
+.share{
+    padding-left:0.6rem;
+}
+.PostsWall{
+
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.postCover{
+
+    margin-bottom: 35px;
 }
