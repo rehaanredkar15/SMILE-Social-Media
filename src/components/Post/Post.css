@@ -10,10 +10,10 @@
 
 
 .post{
-    padding: 20px;
+    padding: 1px 25px 22px 15px ;
     box-shadow: -1px 3px 22px -14px rgb(175, 173, 173);
     background-color: white;
-    padding-left: 10px;
+    padding-left: 20px;
     width:93%;
     border-radius: 12px;
 }
@@ -29,10 +29,10 @@
 }
 
 .postImg{
-   
-    padding:10px 10px 6px 2px;
+    padding:10px 12px 6px 2px;
     height: 22rem;
-    width: 41rem;
+    width: 42rem;
+    object-fit: cover;
     border-radius: 1rem;
 }
 
@@ -68,7 +68,7 @@
 
 .moreOptions{
     display: inline-block;
-    margin-right: auto;
+    margin-right: 0;
     background-color: inherit;   
 }
 
@@ -78,9 +78,6 @@
 
 
 .postProfileImg{
-
-
-     
     height: 3rem;
     width: 3rem;
     object-fit: cover;
