@@ -2,6 +2,8 @@ import React from 'react'
 import './Feed.css';
 import Share from '../Share/Share.jsx';
 import Post from '../Post/Post.jsx';
+import {Posts} from '../../dummyData';
+
 
 const Feed = () => {
     return (
@@ -11,18 +13,12 @@ const Feed = () => {
               <Share/>
               </div>
               <div className="PostsWall">
+
+             {Posts.map((p) => (
               <div className="postCover">
-               <Post/>
-              </div>
-              <div className="postCover">
-               <Post/>
-              </div>
-              <div className="postCover">
-               <Post/>
-              </div>
-              <div className="postCover">
-               <Post/>
-              </div>
+               <Post key={p.id} post={p}/>
+              </div>))
+             }
               </div>
             </div>
         </div>
