@@ -97,11 +97,13 @@
     justify-content: space-between;
  }
 
+ .postLikeCounter{
+     padding: 1px 2rem 1px 0.2px;
+ }
  .postBottomLeft{
      display:flex;
      justify-items: center;
      padding-right:10px;
-     
  }
 
  .postBottomRight{

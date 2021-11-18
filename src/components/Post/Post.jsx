@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import './Post.css';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import {Users} from '../../dummyData';
@@ -6,7 +6,22 @@ import {Users} from '../../dummyData';
 
 
 const Post = ({post}) => {
+    
+    const [Like, setLike] = useState(post.like);
+    const [isLiked, setisLiked] = useState(false)
+    // const [isLoved, setisLoved] = useState(false)
+    const likeHandler = () => {
 
+         setLike(isLiked? Like - 1 : Like + 1);
+         setisLiked(!isLiked);
+    }
+    // const [Love, setLoved] = useState(post.like);
+    // const LoveHandler = () => {
+
+    //      setLoved(isLoved? Love - 1 : Love + 1);
+    //      setisLoved(!isLoved);
+    // }
+    
     return (
         <div className="post">
 
@@ -38,9 +53,10 @@ const Post = ({post}) => {
 
                 <div className="postBottom">  
                  <div className="postBottomLeft">
-                  <img src="/Assets/like.png" alt="" className="likeIcon" />
-                  <img src="/Assets/heart.png" alt="" className="likeIcon" />
-                  <span className="postLikeCounter">{post.like}</span>
+                  <img src="/Assets/like.png" alt="" className="likeIcon" onClick={likeHandler}/>
+                  <span className="postLikeCounter">{Like} </span>
+                  {/* <img src="/Assets/heart.png" alt="" className="likeIcon" onClick={LoveHandler}/>
+                 <span className="postLikeCounter">{Love}  </span> */}
                  </div>
 
                  <div className="postBottomRight">
@@ -49,6 +65,8 @@ const Post = ({post}) => {
                      </div>
                  </div>
                 </div>
+
+
             </div>
 
             {/* post end */}
