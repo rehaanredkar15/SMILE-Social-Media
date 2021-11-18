@@ -4,6 +4,8 @@
     background-color:#F6F7F9;
     /* background-color:red; */
     overflow-y: scroll;
+    position:sticky;
+    top:50px;
     
 }
 
@@ -14,13 +16,13 @@
 }
 
 ::-webkit-scrollbar {
-    width: 5px;
+    width: 7px;
   }
   ::-webkit-scrollbar-track {
-    background-color: #f1f1f1;
+    background-color: #fffefe;
   }
   ::-webkit-scrollbar-thumb {
-    background-color:#f1f1f1;
+    background-color:#e0dfdf;
   }
 
 
@@ -50,7 +52,7 @@
     display: flex;
     padding: 15px;
     height: 60px;
-    width:70%;
+    width:80%;
     border-radius: 0.7rem;
     box-shadow: -1px 3px 18px -14px rgb(175, 173, 173);
     background-color: white;
@@ -59,9 +61,8 @@
 .Options{
     background-color: white;
     height: 80%;
-    width:80%;
+    width:90%;
     box-shadow: -1px 3px 22px -14px rgb(175, 173, 173);
-
     border-radius: 0.5rem;
 }
 

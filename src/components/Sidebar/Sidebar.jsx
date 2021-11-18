@@ -6,6 +6,7 @@ import PhotoAlbumTwoToneIcon from '@mui/icons-material/PhotoAlbumTwoTone';
 import AccountCircleTwoToneIcon from '@mui/icons-material/AccountCircleTwoTone';
 import SettingsApplicationsTwoToneIcon from '@mui/icons-material/SettingsApplicationsTwoTone';
 import EventNoteTwoToneIcon from '@mui/icons-material/EventNoteTwoTone';
+import { Users} from '../../dummyData';
 
 
 
@@ -66,34 +67,19 @@ const Sidebar = () => {
               
               <div className="FriendsList">
                 <ul className="sidebarFriendList">
-                    <li className="sidebarFriend">
-                        <div className = "FriendDetails">
-                        <img src="/Assets/friend.jpg" alt="" className="sidebarFriendImg" />
-                        <span className="sidebarFriendName"> Zayn Malik</span>
-                        
-                        </div>
-                     </li>
-                    <li className="sidebarFriend">
-                        <div className = "FriendDetails">
-                        <img src="/Assets/friend.jpg" alt="" className="sidebarFriendImg" />
-                        <span className="sidebarFriendName"> Zayn Malik</span>
-                        
-                        </div>
-                     </li>
-                    <li className="sidebarFriend">
-                        <div className = "FriendDetails">
-                        <img src="/Assets/friend.jpg" alt="" className="sidebarFriendImg" />
-                        <span className="sidebarFriendName"> Zayn Malik</span>
-                        
-                        </div>
-                     </li>
-                    <li className="sidebarFriend">
-                        <div className = "FriendDetails">
-                        <img src="/Assets/friend.jpg" alt="" className="sidebarFriendImg" />
-                        <span className="sidebarFriendName"> Zayn Malik</span>
-                        
-                        </div>
-                     </li>
+                        {
+                          Users.map((u) => (
+
+                               <li className="sidebarFriend">
+                               <div className = "FriendDetails">
+                                    <img src={u.profilePicture} alt="" className="sidebarFriendImg" />
+                                    <span className="sidebarFriendName"> {u.username}</span>
+                                    </div>
+                                </li>
+                          ))
+                        }
+
+                    
                  </ul>
               </div>
               
