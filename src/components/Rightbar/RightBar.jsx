@@ -1,7 +1,11 @@
 import React from 'react'
 import './RightBar.css';
+import { Users} from '../../dummyData';
+import OnlineFriends from '../OnlineFriends/OnlineFriends.jsx';
 
 const RightBar = () => {
+
+    
     return (
         <div className="RightBarContainer">
             <div className="rightBarWrapper">
@@ -22,7 +26,7 @@ const RightBar = () => {
                 <h4 className="rightBarTitle">Online Friends</h4>
                 </div>
                 <ul className="rightBarFriendList">
-                    <li className="rightBarFriend">
+                    {/* <li className="rightBarFriend">
                         <div className = "FriendDetails">
                         <div className="rightBarProfileImgContainer">
                         <img src="/Assets/friend.jpg" alt="" className="rightBarFriendImg" />
@@ -30,25 +34,13 @@ const RightBar = () => {
                         </div>
                         <span className="rightBarFriendName"> Zayn Malik</span>
                         </div>
-                     </li>
-                    <li className="rightBarFriend">
-                        <div className = "FriendDetails">
-                        <div className="rightBarProfileImgContainer">
-                        <img src="/Assets/friend.jpg" alt="" className="rightBarFriendImg" />
-                        <span className="rightBarOnline"></span>
-                        </div>
-                        <span className="rightBarFriendName"> Zayn Malik</span>
-                        </div>
-                     </li>
-                    <li className="rightBarFriend">
-                        <div className = "FriendDetails">
-                        <div className="rightBarProfileImgContainer">
-                        <img src="/Assets/friend.jpg" alt="" className="rightBarFriendImg" />
-                        <span className="rightBarOnline"></span>
-                        </div>
-                        <span className="rightBarFriendName"> Zayn Malik</span>
-                        </div>
-                     </li>
+                     </li> */}
+                     {
+                         Users.map((u) => (
+
+                          <OnlineFriends key ={u.id} user={u}/>
+                         ))
+                     }
                  </ul>
               </div>
             </div>
