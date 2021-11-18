@@ -1,0 +1,40 @@
+
+.rightBarFriend{
+
+    padding: 6px;
+}
+.FriendDetails{
+    display:flex;
+    flex-direction: row;
+}
+
+.rightBarFriendName{
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.rightBarFriendImg{
+
+    height: 45px;
+    width: 45px;
+    object-fit: cover;
+    border-radius: 50%;
+ }
+
+ .rightBarProfileImgContainer{
+     margin-right: 8px;
+     position: relative;
+ }
+
+
+ .rightBarOnline{
+     width:9px;
+     height:9px;
+     border-radius: 50%;
+     background-color: limegreen;
+     position: absolute;
+     top:-2px;
+     right:0;
+     border:2px solid white;
+ }
