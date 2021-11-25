@@ -7,7 +7,7 @@ import AccountCircleTwoToneIcon from '@mui/icons-material/AccountCircleTwoTone';
 import SettingsApplicationsTwoToneIcon from '@mui/icons-material/SettingsApplicationsTwoTone';
 import EventNoteTwoToneIcon from '@mui/icons-material/EventNoteTwoTone';
 import { Users} from '../../dummyData';
-
+import { Link } from "react-router-dom";
 
 
 const Sidebar = () => {
@@ -26,18 +26,34 @@ const Sidebar = () => {
              </div>
               <div className="Options">
                 <ul className = "sidebarList">
-                   <li className="sidebarListItem"> 
-                  <ContactsTwoToneIcon htmlColor="blue" className="Icons"/>
-                   <span className="sidebarListItemText">People </span>
-                  </li>
-                  <hr className = "sidebarHr"/>
-
                   <li className="sidebarListItem">     
                   <MapsHomeWorkTwoToneIcon  htmlColor="tomato" className="Icons"/>
-                  <span className="sidebarListItemText"> Home </span>
+                   <Link to="/">
+                        <span className="sidebarListItemText"> Home </span>
+                  </Link>
+                  </li>
+
+
+                  <hr className = "sidebarHr"/>
+
+
+                  <li className="sidebarListItem">
+                  <AccountCircleTwoToneIcon className="Icons"  htmlColor="purple"/>
+                   <Link to="/profile" style={{textDecoration:"none"}}> 
+                   <span className="sidebarListItemText"> Profile</span>
+                   </Link>
                   </li>
                   <hr className = "sidebarHr"/>
 
+                   <li className="sidebarListItem"> 
+                  <ContactsTwoToneIcon htmlColor="blue" className="Icons"/>
+                   <Link to="/">
+                   <span className="sidebarListItemText">People </span>
+                   </Link> 
+                  </li>
+                  <hr className = "sidebarHr"/>
+
+ 
                   <li className="sidebarListItem">
                   <PhotoAlbumTwoToneIcon  htmlColor="goldenrod" className="Icons"/>
                   <span className="sidebarListItemText">   Photos </span>
@@ -50,11 +66,7 @@ const Sidebar = () => {
                   </li>
                   <hr className = "sidebarHr"/>
 
-                  <li className="sidebarListItem">
-                  <AccountCircleTwoToneIcon className="Icons"  htmlColor="purple"/>
-                  <span className="sidebarListItemText"> Profile</span>
-                  </li>
-                  <hr className = "sidebarHr"/>
+                  
 
                   <li className="sidebarListItem">     
                   <SettingsApplicationsTwoToneIcon className="Icons"  htmlColor="#839192"/>
