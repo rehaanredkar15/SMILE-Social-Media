@@ -11,6 +11,7 @@ const Profile = () => {
             <TopBar/>
             <div className="profile"> 
              <SideBar/>
+             
             <div className="profileRight">
               <div className="profileRightTop">
 
@@ -36,7 +37,7 @@ const Profile = () => {
             </div>
                 <div className="profileRightBottom">
                    <Feed/>
-                   <RightBar/>
+                   <RightBar profile/>
                   </div>
               </div>
             </div>

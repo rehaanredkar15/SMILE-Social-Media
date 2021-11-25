@@ -9,6 +9,12 @@
  .profileRight{
      /* padding: 0px 20px 10px 20px ; */
    flex:4;
+   height: 100vh;
+   overflow-y: scroll;
+}
+
+.profileInfo{
+
 }
 
 .profileCover{
@@ -52,17 +58,17 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: red;
+    /* background-color: red; */
     margin-bottom: 30px;
     /* padding-bottom: 10px; */
 }
 
 .profileInfoName{
-    background-color: blanchedalmond;
+    /* background-color: blanchedalmond; */
     margin-bottom: 0px;
     margin-top: 0px;
 }
 
 .profileInfoDesc{
-    background-color: blanchedalmond;
+    /* background-color: blanchedalmond; */
 }
