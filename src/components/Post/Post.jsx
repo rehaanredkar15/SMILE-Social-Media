@@ -1,14 +1,32 @@
-import React,{useState} from 'react';
+import React,{useEffect,useState} from 'react';
+import axios from 'axios';
 import './Post.css';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import {Users} from '../../dummyData';
-
+// import {Users} from '../../dummyData';
+import {format} from 'timeago.js';
+import { Link } from "react-router-dom";
 
 
 const Post = ({post}) => {
     
     const [Like, setLike] = useState(post.like);
-    const [isLiked, setisLiked] = useState(false)
+    const [isLiked, setisLiked] = useState(false);
+    const [users,setUsers]  = useState([]);
+
+
+     useEffect(() => {
+
+        //  console.log(users);
+         const fetchUser = async () => {
+              const res = await axios.get(`/user?userId=${post.userId}`)
+             //here the fetch function is required to make the api request 
+              console.log(res.data);
+              setUsers(res.data);
+         }
+         fetchUser();
+     }, [post.userId])
+     //the useEffect will run for every user change
+
     // const [isLoved, setisLoved] = useState(false)
     const likeHandler = () => {
 
@@ -17,11 +35,12 @@ const Post = ({post}) => {
     }
     // const [Love, setLoved] = useState(post.like);
     // const LoveHandler = () => {
-
     //      setLoved(isLoved? Love - 1 : Love + 1);
     //      setisLoved(!isLoved);
     // }
-    
+
+
+
     return (
         <div className="post">
 
@@ -29,16 +48,19 @@ const Post = ({post}) => {
           <div className="postWrapper">
               <div className="postTop">
                   <div className="postTopLeft">
-                     <div  >                     
-                     <img className = "postProfileImg" src={ Users.filter((u) =>u.id === post.userId)[0].profilePicture} alt="" />
+                     <div>
+
+                     <Link to = {`/profile/${users.username}`}>                     
+                     <img className = "postProfileImg" src={ users.profilePicture} alt="" />
+                     </Link>
                      </div>
                      <div className="postDetails">
                       <span className="postUserName"> 
-                    { 
-                       Users.filter((u) =>u.id === post.userId)[0].username
-                    }
+                       {
+                           users.username
+                       }
                          </span>
-                      <span className="postTime">{post.date}</span>
+                      <span className="postTime">{format(post.createdAt)}</span>
                       </div>
                   </div>
                     <div className="moreOptions">
@@ -53,8 +75,9 @@ const Post = ({post}) => {
 
                 <div className="postBottom">  
                  <div className="postBottomLeft">
+                 
                   <img src="/Assets/like.png" alt="" className="likeIcon" onClick={likeHandler}/>
-                  <span className="postLikeCounter">{Like} </span>
+                  <span className="postLikeCounter">{post.likes.length} </span>
                   {/* <img src="/Assets/heart.png" alt="" className="likeIcon" onClick={LoveHandler}/>
                  <span className="postLikeCounter">{Love}  </span> */}
                  </div>
