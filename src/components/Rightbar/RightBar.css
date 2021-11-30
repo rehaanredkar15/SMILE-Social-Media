@@ -71,7 +71,7 @@
 .friendsListWrapper{
      background-color: inherit;
     display: flex;
-    margin-top: 2rem;
+    margin-top: 1rem;
     padding-left:1rem;
     flex-direction: column;
 }
@@ -126,7 +126,8 @@
  }
 
  .rightbarInfo{
-
+ 
+    /* margin-top: 2rem; */
    margin-bottom: 30px;
 
  }
