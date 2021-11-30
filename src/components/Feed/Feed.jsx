@@ -1,11 +1,28 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import './Feed.css';
 import Share from '../Share/Share.jsx';
 import Post from '../Post/Post.jsx';
-import {Posts} from '../../dummyData';
+// import {Posts} from '../../dummyData';
+import axios from 'axios';
 
 
-const Feed = () => {
+const Feed = ({username}) => {
+
+     const [posts,setPosts]  = useState([]);
+
+
+     useEffect(() => {
+         const fetchPost = async () => {
+              const res = username ? await axios.get("/posts/profile/"+username) : await axios.get("/posts/timeline/61a38caadfa5deabe477eee0")
+             //here the fetch function is required to make the api request 
+            setPosts(res.data);
+           
+        
+         }
+         fetchPost();
+     }, [])
+ 
+
     return (
         <div className = "FeedContainer">
             <div className="FeedWrapper">
@@ -14,9 +31,9 @@ const Feed = () => {
               </div>
               <div className="PostsWall">
 
-             {Posts.map((p) => (
+             {posts.map((p) => (
               <div className="postCover">
-               <Post key={p.id} post={p}/>
+               <Post key={p._id} post={p}/>
               </div>))
              }
               </div>
