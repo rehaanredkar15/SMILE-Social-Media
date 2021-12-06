@@ -2,10 +2,24 @@ import React from 'react'
 import './Topbar.css';
 // import { Search } from "@material-ui/icons";
 import {Search,Person,Chat,Notifications } from "@material-ui/icons";
+import {useRef,useContext} from 'react'
+import { AuthContext } from '../../Context/AuthContext';
 
 
 
 const TopBar = () => {
+
+
+     const { user} = useContext(AuthContext);
+     const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+    console.log(PF);
+
+    //  console.log(user)    
+
+
+
+
+
     return (
         <div className="TopBarContainer">
           <img src="/Assets/Logo.png" alt="profile" className="logoImg" />
@@ -42,7 +56,7 @@ const TopBar = () => {
                   <Notifications/>
                     <span className="topBarIconBadge">1</span>
                  </div>
-               <img src="/Assets/profilepic.jpg" alt="profile" className="topbarImg" />
+               <img src={"http://localhost:3000/Assets/person/noAvatar.png"}  className="topbarImg" />
                </div>
 
               </div>

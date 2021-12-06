@@ -8,19 +8,30 @@ import SettingsApplicationsTwoToneIcon from '@mui/icons-material/SettingsApplica
 import EventNoteTwoToneIcon from '@mui/icons-material/EventNoteTwoTone';
 import { Users} from '../../dummyData';
 import { Link } from "react-router-dom";
+import {useRef,useContext} from 'react'
+import { AuthContext } from '../../Context/AuthContext';
+
+
 
 
 const Sidebar = () => {
+
+
+     const { user} = useContext(AuthContext);
+
+
     return (
         <div className="SideBarContainer">
           <div className="SideWrapper">
              <div className="Profile">
                <div className="ProfileImage">
-               <img src="/Assets/profilepic.jpg" alt="profile" className="ProfileImg" />
+               <img src={user.profilePicture}  className="ProfileImg" />
                </div>
                 <div className="ProfileDetails">
                 Rehaan Redkar
-                @Rehaan2525
+
+                @{user.username}
+                
 
                 </div>
              </div>
@@ -39,7 +50,7 @@ const Sidebar = () => {
 
                   <li className="sidebarListItem">
                   <AccountCircleTwoToneIcon className="Icons"  htmlColor="purple"/>
-                   <Link to="/profile" style={{textDecoration:"none"}}> 
+                   <Link to="/profile/Arshad" style={{textDecoration:"none"}}> 
                    <span className="sidebarListItemText"> Profile</span>
                    </Link>
                   </li>
