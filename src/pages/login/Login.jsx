@@ -1,8 +1,31 @@
-import React from 'react'
+import React,{useRef,useContext} from 'react'
 import './Login.css';
+import {  LoginCall } from '../APICalls';
+import { AuthContext } from '../../Context/AuthContext';
+import { CircularProgress } from "@material-ui/core";
+import { Link } from "react-router-dom";
+
 
 
 export default  function Login ()  {
+ 
+   const email = useRef();
+   const password = useRef();
+   const { user,isFetching,error,dispatch} = useContext(AuthContext);
+
+
+   const handleClick = (e) => {
+     
+     e.preventDefault();
+
+    //the second parameter is dispatch 
+     LoginCall({email:email.current.value,password:password.current.value},dispatch);
+
+   }
+
+ 
+
+
     return (
         <div className="login">
           <div className="loginWrapper">
