@@ -17,14 +17,14 @@ const Feed = ({username}) => {
 
      useEffect(() => {
          const fetchPost = async () => {
-              const res = username ? await axios.get("/posts/profile/"+username) : await axios.get("/posts/timeline/61a38caadfa5deabe477eee0")
+              const res = username ? await axios.get("/posts/profile/"+username) : await axios.get("/posts/timeline/" + user._id )
              //here the fetch function is required to make the api request 
             setPosts(res.data);
            
         
          }
          fetchPost();
-     }, [])
+     }, [username,user._id])
  
 
     return (
