@@ -1,33 +1,50 @@
 import React,{useRef,useContext} from 'react'
 import './Login.css';
-import {  LoginCall } from '../APICalls';
+import {  LoginCall,LoginDetails } from '../APICalls';
 import { AuthContext } from '../../Context/AuthContext';
 import { CircularProgress } from "@material-ui/core";
 import { Link } from "react-router-dom";
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
+import { SnackbarContext } from "../../Context/Snackbar/SnackbarContext";
 
-
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 
 export default  function Login ()  {
  
    const email = useRef();
    const password = useRef();
    const { user,isFetching,error,dispatch} = useContext(AuthContext);
+    const { snackbarOpen,snackbarType,snackbarMessage,dispatched } = useContext(SnackbarContext);
 
+  const handleClose = (event, reason) => {
+			if (reason === 'clickaway') {
+			return;
+			}
+      dispatched({type:"SNACKBAR_SET",payload:(snackbarOpen:false)});
+		}; 
 
    const handleClick = (e) => {
      
      e.preventDefault();
 
     //the second parameter is dispatch 
-     LoginCall({email:email.current.value,password:password.current.value},dispatch);
-
+     LoginCall({email:email.current.value,password:password.current.value},dispatch,dispatched);
+     LoginDetails();
    }
 
- 
-
+    
 
     return (
         <div className="login">
+           { snackbarOpen &&  <Snackbar open={snackbarOpen} autoHideDuration={3000} anchorOrigin={  {vertical: 'top',horizontal: 'center'}} onClose={handleClose}>
+                <Alert onClose={handleClose} severity={snackbarType} sx={{ width: '100%' }}>
+                {snackbarMessage}
+                </Alert>
+              </Snackbar>
+              }
           <div className="loginWrapper">
             <div className="loginLeft">
                <h3 className="loginLogo">Smile</h3>
@@ -48,13 +65,19 @@ export default  function Login ()  {
                 "Log In"
               )}
             </button>
-            <span className="loginForgot">Forgot Password?</span>
+
+            <span className="loginForgot">
+             <Link to="/login/forgotPassword">
+               Forgot Password?
+            </Link>
+            </span>
+
             <Link to="/register">
              <button className="loginRegisterButton">
               {isFetching ? (
                 <CircularProgress color="primary" size="20px" />
               ) : (
-                "Create a New Account"
+                "Register"
               )}
             </button>
             </Link>

@@ -2,67 +2,85 @@ import React from 'react'
 import './Topbar.css';
 // import { Search } from "@material-ui/icons";
 import {Search,Person,Chat,Notifications } from "@material-ui/icons";
-import {useRef,useContext} from 'react'
+import {useRef,useContext,useEffect,useState} from 'react'
 import { AuthContext } from '../../Context/AuthContext';
-
-
+import axios from 'axios';
+import { Link } from "react-router-dom";
+import ContactsTwoToneIcon from '@mui/icons-material/ContactsTwoTone';
+import MapsHomeWorkTwoToneIcon from '@mui/icons-material/MapsHomeWorkTwoTone';
+import TextsmsTwoToneIcon from '@mui/icons-material/TextsmsTwoTone';
+import AccountCircleTwoToneIcon from '@mui/icons-material/AccountCircleTwoTone';
+import SettingsApplicationsTwoToneIcon from '@mui/icons-material/SettingsApplicationsTwoTone';
+import { LogoutCall } from '../../pages/APICalls.js';
 
 const TopBar = () => {
 
 
-     const { user} = useContext(AuthContext);
-     const PF = process.env.REACT_APP_PUBLIC_FOLDER;
-    console.log(PF);
+     const { dispatch} = useContext(AuthContext);
 
-    //  console.log(user)    
+      const user = JSON.parse(localStorage.getItem('user'));
+      
+    
+     const handleLogoutClick =(e)=> {
 
-
+      e.preventDefault();
+       LogoutCall(user,dispatch);
+       
+    }
 
 
 
     return (
+      <>
         <div className="TopBarContainer">
-          <img src="/Assets/Logo.png" alt="profile" className="logoImg" />
+            <img src="/Assets/Logo.png" alt="profile" className="logoImg" />
             <div className="topBarLeft"> 
+                <Link to ="/"  style={{textDecoration:"none"}} >
               <span className="logo"> 
-                Smile
+                SMILE
               </span>
+               </Link>
             </div>
  
             <div className="topBarCenter"> 
-               <div className="SearchBar"> 
-                <Search className="SearchIcon" />
-              <input placeholder="Search for friend,post or video" type="text" className="searchInput" />
-               </div>
-            </div>
+             <div className="topBarIcons">
+             <div className="IconsItem">
+              <Link to="/" style={{textDecoration:"none"}}>
+                 <img src="http://localhost:3000/Assets/Icons/home.png" alt="" className="IconsTop"/>
+                  </Link>
+             </div>
 
+             <div className="IconsItem">
+                  <Link to="/ChatSection" style={{textDecoration:"none"}}>
+                 <img src="http://localhost:3000/Assets/Icons/msg3.png" alt="" className="IconsTop"/>                  
+                  </Link> 
+             </div>
+
+             <div className="IconsItem">
+                   <Link to = "/explore" style={{textDecoration:"none"}}> 
+                 <img src="http://localhost:3000/Assets/Icons/explore.png" alt="" className="IconsTop"/>                   
+                 </Link>
+             </div>
+             </div>
+            </div>
+                 <li className="sidebarListItem">     
+                  <button className="sidebarButton"  onClick={handleLogoutClick}> Logout </button>
+                  </li>
 
              <div className="topBarRight">
+               
                <div className="profile">
-                 {/* <span className="topbarLink">HomePage</span>
-                 <span className="topbarLink">Timeline</span> */}
+                  
                </div>
-
                <div className="topBarIcons">
-                <div className="topBarIconItem">
-                  <Person/>
-                    <span className="topBarIconBadge">1</span>
-                 </div>
-                <div className="topBarIconItem">
-                  <Chat/>
-                    <span className="topBarIconBadge">1</span>
-                 </div>
-                <div className="topBarIconItem">
-                  <Notifications/>
-                    <span className="topBarIconBadge">1</span>
-                 </div>
-               <img src={"http://localhost:3000/Assets/person/noAvatar.png"}  className="topbarImg" />
+               <img src={user.profilePicture? user.profilePicture : "http://localhost:3000/Assets/person/user.webp"}  className="topbarImg" />
                </div>
 
               </div>
 
 
         </div>
+        </>
     )
 }
 

@@ -61,14 +61,30 @@
     /* background-color: red; */
     margin-bottom: 30px;
     /* padding-bottom: 10px; */
+    margin-left:4rem ;
 }
 
 .profileInfoName{
     /* background-color: blanchedalmond; */
+    font-size: 2rem;
     margin-bottom: 0px;
     margin-top: 0px;
+    
 }
 
 .profileInfoDesc{
     /* background-color: blanchedalmond; */
+}
+
+.ChatSection{
+    /* background-color: red; */
+    display: flex;
+    float: right;
+    margin-right: 2.5rem;
+}
+
+.ChatIcons{
+    /* background-color: bisque; */
+    height: 5rem;
+    width:5rem
 }

@@ -32,3 +32,10 @@ package.json
 Assets/Logo.png
 *.lock
 yarn.lock
+*.jpeg
+*.lock
+*.json
+package-lock.json
+.env
+*.json
+package-lock.json

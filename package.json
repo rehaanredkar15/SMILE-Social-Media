@@ -9,17 +9,22 @@
     "@material-ui/core": "^4.12.3",
     "@material-ui/icons": "^4.11.2",
     "@mui/icons-material": "^5.1.0",
-    "@mui/material": "^5.1.0",
+    "@mui/material": "^5.2.8",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.24.0",
+    "framer-motion": "^6.2.1",
     "history": "^5.1.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-easy-crop": "^4.0.1",
     "react-router-dom": "^6.0.2",
     "react-scripts": "4.0.3",
+    "react-scroll": "^1.8.4",
+    "socket.io-client": "^4.4.1",
     "timeago": "^1.6.7",
+    "timeago.js": "^4.0.2",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
@@ -46,10 +51,10 @@
       "last 1 safari version"
     ]
   },
+  "proxy": "http://localhost:5000/api",
   "devDependencies": {
     "autoprefixer": "^9.8.8",
     "postcss": "^7.0.39",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
-  },
-  "proxy": "http://localhost:5000/api"
+  }
 }

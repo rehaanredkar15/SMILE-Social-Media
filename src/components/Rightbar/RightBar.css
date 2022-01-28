@@ -1,9 +1,10 @@
 .RightBarContainer{
-    flex:1.4;
+    flex:1.1;
     /* background-color:#F6F7F9; */
      background-color:#F6F7F9;
-     height:90vh;
+     height:100vh;
      overflow-y: scroll;
+     /* margin-top:3rem; */
     position:sticky;
     /* top:50px;  */
    
@@ -12,6 +13,7 @@
 .eventImg{
     height:3rem;
     width:3rem;
+    margin-top: 5rem;
 }
 
 ::-webkit-scrollbar {
@@ -59,6 +61,62 @@
 }
 
 
+.Options{
+    background-color: white;
+    height: 80%;
+    width:80%;
+    margin-left: 1rem;
+    box-shadow: -1px 3px 22px -14px rgb(175, 173, 173);
+    border-radius: 0.5rem;
+}
+
+
+.sidebarList{
+    padding:0;
+    margin:8;
+    width:80%;
+    list-style: none;
+}
+
+.sidebarListItem{
+
+    padding-left: 10px;
+    padding: 13px;
+    display:flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.sidebarListItemText{
+ 
+    width:2rem;
+    height: 2rem;
+    padding:2px;
+    cursor: pointer;
+    font-weight: 600;
+    color: rgb(78, 78, 78);
+    text-decoration: none;
+    padding-left:15px;
+}
+
+.sidebarHr{
+    color:grey;
+    width:120%;
+}
+
+.sidebarSec{
+    
+}
+
+
+.sidebarFriend{
+
+    padding: 10px;
+}
+
+
+
+
 .rightBarFriendList{
      padding:0;
      margin-top: 0rem;
@@ -71,17 +129,19 @@
 .friendsListWrapper{
      background-color: inherit;
     display: flex;
-    margin-top: 1rem;
+    /* margin-top: 1rem; */
     padding-left:1rem;
     flex-direction: column;
 }
 
 .eventText{
     padding-left: 10px;
+    margin-top: 6rem;
 }
 
 .rightBarFriend{
-
+  
+    margin-top: 0;
     padding: 6px;
 }
 .FriendDetails{
@@ -147,6 +207,9 @@
     font-weight: 300;
 }
 
+
+
+
 .rightbarFollowings{
 
     display: flex;
@@ -159,8 +222,9 @@
 
     /* background-color: blueviolet; */
      height: 8rem;
-     width: 6rem;
+     width: 8rem;
      padding-bottom: 2rem;
+     padding-left: 1.5rem;
 }
 
 .rightbarFollowingName{
@@ -181,4 +245,34 @@
     width:5rem;
     object-fit: cover;
     border-radius: 5px;
+}
+
+.ConnectButton{
+          background-color: rgb(12, 211, 247);
+          border-radius: 10px;
+          font-size: 15px;
+          font-family: Poppins;
+          display: flex;
+          color: white;
+          justify-content: center;
+          align-items: center;
+          border: none;
+          padding:5px;
+          height: 35px;
+          width: 120px;
+          cursor:pointer;
+}
+
+.Icons{
+    height:30px;
+    margin-right: 10px;
+}
+.notify{
+    height:10rem;
+    margin-left: 3rem;
+    width:10rem;
+}
+.btn-logo{
+    display: flex;
+
 }

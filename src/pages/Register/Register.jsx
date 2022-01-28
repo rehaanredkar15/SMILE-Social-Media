@@ -1,10 +1,20 @@
 import React from 'react'
 import './Register.css';
-import {useRef,useContext} from 'react'
+import {useRef,useContext,useState,useEffect} from 'react'
 import {  RegisterCall } from '../APICalls';
 import { AuthContext } from '../../Context/AuthContext';
 import { CircularProgress } from "@material-ui/core";
 import { Link } from "react-router-dom";
+import { SnackbarContext } from "../../Context/Snackbar/SnackbarContext";
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
+
+const initialState = { snackbarOpen:false,snackbarType:'',snackbarMessage:''}
+
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
+
 
 export default  function Register ()  {
 
@@ -13,27 +23,59 @@ export default  function Register ()  {
    const username= useRef();
    const confirmPassword = useRef();
    const { user,isFetching,error,dispatch} = useContext(AuthContext);
+   const [Data, setData] = useState(initialState);
+   const { snackbarOpen,snackbarType,snackbarMessage,dispatched } = useContext(SnackbarContext);
+
+   const handleClose = (event, reason) => {
+			if (reason === 'clickaway') {
+			return;
+			}
+
+				setData((state) => ({snackbarOpen:false}))
+		};
+
+   
+   
+
+   useEffect(() => {
+         dispatch({type:"SNACKBAR_SET",payload:Data});
+				
+			}, [Data])
+
+
+
 
   const handleClick = (e) => {
      
      e.preventDefault();
 
+
+    if(password.current.value == confirmPassword.current.value)
+    {
+
     //the second parameter is dispatch 
      RegisterCall({ username:username.current.value,
      email:email.current.value,
-     password:password.current.value},dispatch);
+     password:password.current.value},dispatch,dispatched);
 
 
-     console.log({
-     username:username.current.value,
-     email:email.current.value,
-     password:password.current.value,
-     confirmPassword:confirmPassword.current.value});
+    }
+    else{
+      alert('Password and Confirm Password are not matching!!')
+    }
+
 
    }
 
     return (
         <div className="login">
+
+           { snackbarOpen && <Snackbar open={snackbarOpen} autoHideDuration={3000} onClose={handleClose}>
+                <Alert onClose={handleClose} severity={snackbarType} sx={{ width: '100%' }}>
+                {snackbarMessage}
+                </Alert>
+              </Snackbar>
+              }
           <div className="loginWrapper">
             <div className="loginLeft">
                <h3 className="loginLogo">Smile</h3>

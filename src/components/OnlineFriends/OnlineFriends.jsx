@@ -1,20 +1,114 @@
-import React from 'react';
+import axios from "axios";
+import { useContext, useEffect, useRef, useState } from "react";
+import "./OnlineFriends.css";
+import { io } from "socket.io-client";
+import { CurrentChatContext } from "../../Context/CurrentChat/CurrentChatContext";
+import { OnlineUsersContext } from "../../Context/OnlineUsers/OnlineUsersContext";
 
 
-const OnlineFriends = ({user}) => {
-    return (
-        <div>
-              <li className="rightBarFriend">
-                        <div className = "FriendDetails">
-                        <div className="rightBarProfileImgContainer">
-                        <img src={user.profilePicture} alt="" className="rightBarFriendImg" />
-                        <span className="rightBarOnline"></span>
-                        </div>
-                        <span className="rightBarFriendName"> {user.username}</span>
-                        </div>
-               </li>
+export default function OnlineFriends ({  currentId ,conversations}) {
+  const [friends, setFriends] = useState([]);
+  const [onlineFriends, setOnlineFriends] = useState([]);
+    const { currentchat,dispatcher } = useContext(CurrentChatContext);
+    const { OnlineUsers } = useContext(OnlineUsersContext);
+
+
+
+  useEffect(() => {
+    const getFriends = async () => {
+      const res = await axios.get("/user/friends/" + currentId); 
+      setFriends(res.data);
+
+    };
+
+    getFriends();
+  }, [currentId]);
+
+
+  useEffect(() => {
+
+  
+    OnlineUsers && setOnlineFriends(friends.filter((f) => OnlineUsers.includes(f._id)));
+    
+
+
+  }, [friends, OnlineUsers]);
+
+
+
+  const handleClick = async (user) => {
+
+      const members = {
+        senderId:currentId,
+        receiverId:user._id
+    }
+
+
+    const check  = conversations?.some((f) => f.members.includes(user._id));
+    console.log(check);
+
+    if(check){
+
+    try {
+      const res = await axios.get(
+        `/conversations/find/${currentId}/${user._id}`
+      );
+
+      dispatcher({type:"CURRENTCHAT_SET",payload:res.data});
+       
+      } catch (err) {
+      console.log(err);
+    }
+    }
+    else
+    {
+         try {
+
+         const res = await axios.post(`/conversations/`,members);
+
+        console.log(res);
+        dispatcher({type:"CURRENTCHAT_SET",payload:res.data});
+      
+      } catch (err) {
+      console.log(err);
+     }
+    }
+  };
+
+
+
+      useEffect(() => {
+  window.scrollTo(0, 0)
+}, [])
+
+
+  return (
+    <div className="chatOnline">
+      {onlineFriends.length > 0 ? onlineFriends.map((o) => (
+        <div className="chatOnlineFriend" onClick={() => handleClick(o)}>
+          <div className="chatOnlineImgContainer">
+            <img
+              className="chatOnlineImg"
+              src={
+                o?.profilePicture
+                  ?  o.profilePicture
+                  :"http://localhost:3000/Assets/person/user.webp"
+
+              }
+              alt=""
+            />
+            <div className="chatOnlineBadge"></div>
+          </div>
+          <span className="chatOnlineName">{o?.username}</span>
         </div>
-    )
+      )):   <>
+            <h3>No Online Friends</h3> 
+            <img 
+                       src="http://localhost:3000/Assets/person/noonline2.gif"
+                      alt="" 
+                    className="notify"/> 
+                    </>
+      }
+    </div>
+  );
 }
-
-export default OnlineFriends

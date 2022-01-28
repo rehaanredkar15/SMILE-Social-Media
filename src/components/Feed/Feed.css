@@ -1,13 +1,13 @@
 .FeedContainer{
 
     background-color: #F5F8F9;
-    /* background-color: wheat; */
-    flex:2.8;
+    /* background-color: red; */
+    flex:3.2;
     height: 100vh;
     overflow-y: scroll;
     position:sticky;
-    top:50px;
-    /* width: 100%; */
+
+    margin-top: 0px;
 }
 
 .FeedWrapper{
@@ -24,12 +24,15 @@
 
     margin: 20px;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;   
+    margin-bottom: 6rem;
 }
 
 .postCover{
-
-    margin-bottom: 35px;
+    width: 85%;
+     margin-bottom: 35px;
 }
 
 
@@ -41,4 +44,24 @@
   }
   ::-webkit-scrollbar-thumb {
     background-color:#b8b5b5;
+  }
+
+  .Error{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* background-color: red; */
+      height:35rem;
+      width:35rem;
+  }
+  .image{
+      height:30rem;
+      width:28rem;
+  }
+
+
+  .fetching{
+
+    height:25rem;
+    width:35rem;
   }

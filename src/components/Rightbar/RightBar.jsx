@@ -1,39 +1,198 @@
-import React from 'react'
+import React,{useEffect ,useState,useContext,useRef} from 'react'
 import './RightBar.css';
 import { Users} from '../../dummyData';
 import OnlineFriends from '../OnlineFriends/OnlineFriends.jsx';
+import Notifications from '../Notifications/Notifications.jsx';
+import axios from 'axios';
+import { Link } from "react-router-dom";
+import { AuthContext } from '../../Context/AuthContext';
+import { Add, Remove } from "@material-ui/icons";
+import { io } from "socket.io-client";
+import { CurrentChatContext } from "../../Context/CurrentChat/CurrentChatContext";
+import {Search} from "@material-ui/icons";
+import { LogoutCall } from '../../pages/APICalls.js';
+import ContactsTwoToneIcon from '@mui/icons-material/ContactsTwoTone';
+import MapsHomeWorkTwoToneIcon from '@mui/icons-material/MapsHomeWorkTwoTone';
+import TextsmsTwoToneIcon from '@mui/icons-material/TextsmsTwoTone';
+import AccountCircleTwoToneIcon from '@mui/icons-material/AccountCircleTwoTone';
+import SettingsApplicationsTwoToneIcon from '@mui/icons-material/SettingsApplicationsTwoTone';
+import EventNoteTwoToneIcon from '@mui/icons-material/EventNoteTwoTone';
 
-export default function RightBar({users}){
+export default function RightBar({users,socket}){
 
+    const {user:CurrentUser,dispatch} = useContext(AuthContext);
+    const [Friends, setFriends] = useState();
+ 
+    const [Follow,setFollow] = useState(false);
+    const [notifications, setNotifications] = useState([]);
+    const [convos, setConvos] = useState([]);
+    const { currentchat } = useContext(CurrentChatContext);
+         const [SearchTerm, setSearchTerm] = useState('')
+         const [Term, SetTerm] = useState('')
+       const [Loading, setLoading] = useState(false)
+
+     
+   
+  
+         useEffect(() => {
+          
+          socket && socket.emit("addUser",CurrentUser._id)
+          socket && socket.on("getNotifications",(data) => {
+            setNotifications((prev) => [...prev,data]);
+          })
+        }, [socket,CurrentUser])
+     
+      
+      useEffect(() => {
+          if(users)
+        {
+           CurrentUser.followings>0 &&  setFollow(CurrentUser.followings.includes(users._id));
+        }
+        else
+        {
+             setFollow(false);
+        }
+      }, [users])
+
+
+
+            useEffect(() => {
+
+            const getFriends = async () => {
+            try {
+                if(users?._id)
+                {
+                const friendList = await axios.get("/user/friends/" + users?._id);
+                setFriends(friendList.data);
+                }
+            } catch (err) {
+                console.log(err);
+            }
+            };
+           
+            users &&  getFriends();
+            
+        }, [users]);
+
+
+    
+     const handleClick = async ()=>{
+         setLoading(true);
+         try{
+             if(Follow){
+                await axios.put("/user/" + users._id + "/unfollow",{
+                    userId : CurrentUser._id,
+                })
+                dispatch({ type: "UNFOLLOW", payload: users._id });
+                setLoading(false);
+             }else{ 
+                 await axios.put("/user/" + users._id + "/follow",{
+                     userId:CurrentUser._id,
+                 })
+                 setLoading(false);
+                dispatch({ type: "FOLLOW", payload: users._id });
+             }
+         }catch(err)
+         {
+             console.log(err);
+         }
+
+          setFollow(!Follow);
+         }
+
+
+
+
+     useEffect(() => {
+            const getConversations = async () => {
+            try {
+                const res = await axios.get("/conversations/" + CurrentUser._id);
+                setConvos(res.data);
+            } catch (err) {
+                console.log(err);
+            }
+            };
+            CurrentUser &&  getConversations();
+        }, []);
+ 
 
 
     const HomeRightBar = () => {
         return(
             <>
-              <div className="EventsContainer">
-               <img src="/Assets/events.png" alt="" className="eventImg" />
-               <span className="eventText"> 
-                  <b>Rehaan Redkar </b>and<b> 3 other friends </b>are celebrating an event
-               </span>
+                <div className="Options">
+                 <ul className = "sidebarList">
+                  <li className="sidebarListItem">     
+                   <img src="http://localhost:3000/Assets/Icons/home.gif" alt="" className="Icons"/>
+                   <Link to="/" style={{textDecoration:"none"}}>
+                        <span className="sidebarListItemText"> Home </span>
+                  </Link>
+                  </li>
+
+                 <hr className = "sidebarHr"/>
+
+                   <li className="sidebarListItem"> 
+                  <img src="http://localhost:3000/Assets/Icons/explore.gif" alt="" className="Icons"/>
+                   <Link to="/explore" style={{textDecoration:"none"}}>
+                   <span className="sidebarListItemText"> Explore </span>
+                   </Link> 
+                  </li>
+
+                  <hr className = "sidebarHr"/>
+                  <li className="sidebarListItem">
+                   <img src="http://localhost:3000/Assets/Icons/chat.gif" alt="" className="Icons"/>
+                  <Link to="/ChatSection" style={{textDecoration:"none"}}>
+                  <span className="sidebarListItemText" >Messages </span>
+                   </Link> 
+                  </li>
+                   <hr className = "sidebarHr"/>
+                  <li className="sidebarListItem">
+                  <img src="http://localhost:3000/Assets/Icons/8.gif" alt="" className="Icons"/>
+                   <Link to = {`/userProfile/${CurrentUser.username}`} style={{textDecoration:"none"}}> 
+                   <span className="sidebarListItemText">Edit  Profile</span>
+                   </Link>
+                  </li>
+                  
+                 
+                </ul>
               </div>
-              <img src="/Assets/event.png" alt="" className="rightBarAd" />
-              {/* Online Friends */}
+
               <div className="friendsListWrapper">   
                 <div className="title">
-                <h4 className="rightBarTitle">Online Friends</h4>
+              
+               <h4 className="rightBarTitle">
+                <img src="http://localhost:3000/Assets/Icons/notify.gif" alt="" className="Icons"/>
+                Notifications : { notifications.length > 0 && notifications.length}</h4>
                 </div>
                 <ul className="rightBarFriendList">
-                     {
-                         Users.map((u) => (
-
-                          <OnlineFriends key ={u.id} user={u}/>
-                         ))
-                     }
+                     {notifications.length>0 ? notifications.map((n) => (
+                              <Notifications notifications={n}   />
+                          ))
+                          :  <img 
+                       src="http://localhost:3000/Assets/person/notify.gif"
+                      alt="" 
+                    className="notify"/> 
+                          }
+                   
+                 </ul>
+              </div>
+                <div className="friendsListWrapper">   
+                <h4 className="rightBarTitle">
+                <img src="http://localhost:3000/Assets/Icons/online.gif" alt="" className="Icons"/>
+                Online Friends  :</h4>
+                <ul className="rightBarFriend">
+                       <Link to="/ChatSection" style={{textDecoration:"none"}}>
+                      <OnlineFriends  
+                    currentId={CurrentUser._id}
+                     conversations={convos}
+                   />
+                   </Link>
                  </ul>
               </div>
             </>
         )
     }
+
 
      
     const ProfileRightbar = () => {
@@ -41,6 +200,22 @@ export default function RightBar({users}){
         return (
             <>
             <div className="rightBarDetails">
+            
+             {users.username !==CurrentUser.username && (
+                 <>
+                  <div className="btn-logo">
+                <button className="ConnectButton" onClick={handleClick}>
+                    {Follow ? "Disconnect" : "Connect"} 
+                    {Follow ? <Remove /> : <Add />}   
+                </button>
+                {
+                    
+                   Loading && <img src="http://localhost:3000/Assets/person/loading.gif" alt="" className="Icons"/>
+                }
+                  </div>
+                </>
+                )}
+
             <h4 className="rightBarTitle">User Information</h4>
             <div className="rightbarInfo">
              <div className="rightbarInfoItem">
@@ -52,20 +227,26 @@ export default function RightBar({users}){
              <span className="rightbarInfoValue"> { users.from} </span>
              </div>
              <div className="rightbarInfoItem">
-                    <span className="rightbarInfoKey">Relationship: </span>
-                    <span className="rightbarInfoValue"> { users.relationship} </span>
+                 <span className="rightbarInfoKey">Contact details: </span>
+                 <span className="rightbarInfoValue"> { users.contact} </span>
+               </div>
+             <div className="rightbarInfoItem">
+                 <span className="rightbarInfoKey">Email: </span>
+                 <span className="rightbarInfoValue"> { users.email} </span>
                </div>
              </div>
-            <h4 className="rightBarTitle">User Friends</h4>
+            <h4 className="rightBarTitle">Connections :  { Friends?Friends.length : "-"} </h4>
             <div className="rightbarFollowings">
 
-                 {
-                         Users.map((u) => (
+                 {Friends &&  Friends.map((u) => (
                               <div className="rightbarFollowing">
+                                    <Link to = {"/profile/" + u.username}> 
                                     <img src={u.profilePicture} alt="" className="rightbarFollowingImg" />
+                                    </Link>
                                     <div className="rightbarFollowingName">{u.username}</div>
                                 </div>
                          ))
+
                      }
              </div>
             </div>

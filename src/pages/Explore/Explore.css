@@ -1,0 +1,11 @@
+.EditContainer{
+   
+    display:flex;
+    width:100%;
+}
+
+h1{
+    color: rgb(105, 104, 112);
+    margin-left: 2rem;
+    font-weight: bolder;
+}
