@@ -1,10 +1,9 @@
 import React,{useEffect,useState , useContext} from 'react';
 import axios from 'axios';
 import './Post.css';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
+
 import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
 import ModeEditOutlineTwoToneIcon from '@mui/icons-material/ModeEditOutlineTwoTone';
-
 import {format} from 'timeago.js';
 import { Link } from "react-router-dom";
 import { AuthContext } from '../../Context/AuthContext';
@@ -36,7 +35,7 @@ const Post = ({post,socket}) => {
          }
          fetchUser();
      }, [post.userId])
-     //the useEffect will run for every user change
+    
 
 
     //deletion

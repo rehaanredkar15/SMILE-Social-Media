@@ -10,6 +10,7 @@ const ChatSection = ({currentchat,user,socket,Current}) => {
      const [newMessage, setNewMessage] = useState("");
     const [arrivalMessage, setArrivalMessage] = useState(null);
     
+
        useEffect(() => {
          socket && socket.on("getMessage", (data) => {
             setArrivalMessage({

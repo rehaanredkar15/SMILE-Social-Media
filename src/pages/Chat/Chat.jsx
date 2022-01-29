@@ -1,6 +1,5 @@
 import React from 'react';
 import './Chat.css';
-import Feed from '../../components/Feed/Feed.jsx';
 import Message from '../../components/Message/Message.jsx';
 import SideBar from '../../components/Sidebar/Sidebar.jsx';
 import OnlineFriends from '../../components/OnlineFriends/OnlineFriends.jsx';
@@ -12,10 +11,11 @@ import { CurrentChatContext } from "../../Context/CurrentChat/CurrentChatContext
 import axios from "axios";
 import Conversation from "../../components/Conversation/Conversation.jsx";
 import { Link } from "react-router-dom";
- import {Search } from "@material-ui/icons";
+import {Search } from "@material-ui/icons";
 import { io } from "socket.io-client";
-import MapsHomeWorkTwoToneIcon from '@mui/icons-material/MapsHomeWorkTwoTone';
 import { OnlineUsersContext } from "../../Context/OnlineUsers/OnlineUsersContext";
+
+
 
 const Chat = ({socket}) => {
     
@@ -92,9 +92,6 @@ const Chat = ({socket}) => {
         }, [currentchat])
 
 
-      //  useEffect(() => {
-      //    window.scrollTo(0, 0)
-      //  }, [currentchat])
     return (
               <>
              <TopBar/>
@@ -121,7 +118,7 @@ const Chat = ({socket}) => {
                                 {currentchat ? (
 
                                  <>
-                                 <ChatSection user={user} currentchat={currentchat} friend={Current} socket={socket}/>
+                                 <ChatSection user={user} currentchat={currentchat} Current={Current} socket={socket}/>
                                  </>
                                 ) : (
 
@@ -145,7 +142,6 @@ const Chat = ({socket}) => {
                                 currentId={user._id}
                                  currentChat={currentChat} 
                                  conversations = {conversations}/>
-                                {/* <OnlineFriends/> */}
                             </div>
                       </div>
             </div>

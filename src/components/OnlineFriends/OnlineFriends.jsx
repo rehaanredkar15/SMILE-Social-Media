@@ -104,7 +104,7 @@ export default function OnlineFriends ({  currentId ,conversations}) {
       )):   <>
             <h3>No Online Friends</h3> 
             <img 
-                       src="http://localhost:3000/Assets/person/noonline2.gif"
+                       src="http://localhost:3000/Assets/Icons/noonline2.gif"
                       alt="" 
                     className="notify"/> 
                     </>

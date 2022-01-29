@@ -2,10 +2,10 @@ import React,{useEffect,useState,useContext} from 'react';
 import './Feed.css';
 import Share from '../Share/Share.jsx';
 import Post from '../Post/Post.jsx';
-// import {Posts} from '../../dummyData';
 import axios from 'axios';
 import { AuthContext } from '../../Context/AuthContext';
 import { PostContext } from '../../Context/PostContext/PostContext';
+// import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 
 
@@ -81,8 +81,6 @@ const Feed = ({username,socket}) => {
                <Post key={p._id} post={p} socket={socket}/>
               </div>))
               
-              
-
 
              }
              

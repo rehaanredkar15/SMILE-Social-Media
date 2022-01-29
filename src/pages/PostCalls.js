@@ -26,7 +26,7 @@ export const UpdatePostCall = async (formdata,dispatch,postId,navigate,dispatche
     
     try {
  
-       const res = await fetch("http://localhost:5000/api/posts/update/"+ postId  , {
+       const res = await fetch("https://smilesocialapp.herokuapp.com/api/posts/update/"+ postId  , {
               method: "POST",
               body: formdata,
             });

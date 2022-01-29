@@ -120,7 +120,7 @@ const UserProfile = () => {
                                handleCropper();
                                 SetPicture('Profile');
                                 scrollToTop();
-                                // handleClose(event);
+                                
                             }}/> </span>
                           
                       </div>  
@@ -138,9 +138,8 @@ const UserProfile = () => {
                 <div className="userDetailsTitle">
               
                <h4>User Information</h4> 
-               {/* <a href="#section2"> */}
+
                <ModeEditOutlineTwoToneIcon onClick={handleChange} /> 
-                {/* </a> */}
                 </div>
 
                  { OpenModal && <ShareModal id="section2" OpeningModal={SetOpenModal}  />}

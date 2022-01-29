@@ -9,7 +9,7 @@
     "@material-ui/core": "^4.12.3",
     "@material-ui/icons": "^4.11.2",
     "@mui/icons-material": "^5.1.0",
-    "@mui/material": "^5.2.8",
+    "@mui/material": "^5.3.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -51,7 +51,7 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:5000/api",
+  "proxy": "https://smilesocialapp.herokuapp.com/api",
   "devDependencies": {
     "autoprefixer": "^9.8.8",
     "postcss": "^7.0.39",

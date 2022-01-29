@@ -12,7 +12,7 @@ export default function Message({ message, own ,currentUser,friend}) {
 
     useEffect(() => {
       scrollRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    //      scrollRef.current?.scrollIntoView({ behavior: "smooth" });
+
         }, [message]);
 
         

@@ -11,12 +11,9 @@ import { io } from "socket.io-client";
 import { CurrentChatContext } from "../../Context/CurrentChat/CurrentChatContext";
 import {Search} from "@material-ui/icons";
 import { LogoutCall } from '../../pages/APICalls.js';
-import ContactsTwoToneIcon from '@mui/icons-material/ContactsTwoTone';
-import MapsHomeWorkTwoToneIcon from '@mui/icons-material/MapsHomeWorkTwoTone';
-import TextsmsTwoToneIcon from '@mui/icons-material/TextsmsTwoTone';
-import AccountCircleTwoToneIcon from '@mui/icons-material/AccountCircleTwoTone';
-import SettingsApplicationsTwoToneIcon from '@mui/icons-material/SettingsApplicationsTwoTone';
-import EventNoteTwoToneIcon from '@mui/icons-material/EventNoteTwoTone';
+
+
+
 
 export default function RightBar({users,socket}){
 
@@ -44,9 +41,12 @@ export default function RightBar({users,socket}){
      
       
       useEffect(() => {
+
           if(users)
         {
-           CurrentUser.followings>0 &&  setFollow(CurrentUser.followings.includes(users._id));
+        
+         setFollow(CurrentUser.followings.includes(users._id));
+
         }
         else
         {
@@ -140,7 +140,7 @@ export default function RightBar({users,socket}){
 
                   <hr className = "sidebarHr"/>
                   <li className="sidebarListItem">
-                   <img src="http://localhost:3000/Assets/Icons/chat.gif" alt="" className="Icons"/>
+                   <img src="http://localhost:3000/Assets/Icons/msg3.gif" alt="" className="Icons"/>
                   <Link to="/ChatSection" style={{textDecoration:"none"}}>
                   <span className="sidebarListItemText" >Messages </span>
                    </Link> 

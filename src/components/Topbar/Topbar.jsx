@@ -52,7 +52,7 @@ const TopBar = () => {
 
              <div className="IconsItem">
                   <Link to="/ChatSection" style={{textDecoration:"none"}}>
-                 <img src="http://localhost:3000/Assets/Icons/msg3.png" alt="" className="IconsTop"/>                  
+                 <img src="http://localhost:3000/Assets/Icons/msg.png" alt="" className="IconsTop"/>                  
                   </Link> 
              </div>
 

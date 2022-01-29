@@ -134,7 +134,7 @@ export const PostCall = async (formdata,dispatch) => {
 
     dispatch({type:"POSTING_START"});
     try {
-    //  const res = await axios.post("auth/register",userCredential);
+
        const res = await fetch("posts/feed", {
               method: "POST",
               body: formdata,

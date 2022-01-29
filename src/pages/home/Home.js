@@ -8,11 +8,8 @@ import {  LoginDetails } from '../APICalls';
 
 const Home = ({socket}) => {
    
-    //   console.log(socket)
         const user = localStorage.getItem('user');
      
-
-    
 
 
 

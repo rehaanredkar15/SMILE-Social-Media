@@ -109,7 +109,7 @@ const Crop = ({handleCropper,Picture}) => {
             if(Picture == "Profile")
 			{
 
-			const res = await fetch("http://localhost:5000/api/user/profilePicture/" + user._id, {
+			const res = await fetch("https://smilesocialapp.herokuapp.com/api/user/profilePicture/" + user._id, {
 				method: "PUT",
 				body: formdata,
 			});
@@ -117,7 +117,7 @@ const Crop = ({handleCropper,Picture}) => {
 			}
 			else
 			{
-				const res = await fetch("http://localhost:5000/api/user/coverPicture/" + user._id, {
+				const res = await fetch("https://smilesocialapp.herokuapp.com/apiuser/coverPicture/" + user._id, {
 				method: "PUT",
 				body: formdata,
 			});
