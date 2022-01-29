@@ -28,7 +28,7 @@ function App() {
 
   useEffect(() => {
 
-    setSocket(io("ws://localhost:8900"));
+    setSocket(io("ws:https://smilesocketapp.herokuapp.com/"));
   }, []);
   return (
     <>
