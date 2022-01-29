@@ -1,6 +1,8 @@
 import "./Message.css";
 import { format } from "timeago.js";
 import { useContext, useEffect, useRef, useState } from "react";
+
+
 export default function Message({ message, own ,currentUser,friend}) {
  
 

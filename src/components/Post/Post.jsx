@@ -1,7 +1,6 @@
 import React,{useEffect,useState , useContext} from 'react';
 import axios from 'axios';
 import './Post.css';
-
 import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
 import ModeEditOutlineTwoToneIcon from '@mui/icons-material/ModeEditOutlineTwoTone';
 import {format} from 'timeago.js';
@@ -9,7 +8,6 @@ import { Link } from "react-router-dom";
 import { AuthContext } from '../../Context/AuthContext';
 import { PostContext } from '../../Context/PostContext/PostContext';
 import { DeletePostCall} from '../../pages/PostCalls.js';
-import ShareModal  from '../ShareModal/ShareModal.js';
 
 const Post = ({post,socket}) => {
     

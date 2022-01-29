@@ -1,7 +1,3 @@
- /*@param {File} imageSrc - Image File url
- * @param {Object} pixelCrop - pixelCrop Object provided by react-easy-crop
- * @param {number} rotation - optional rotation parameter
- */
 
 const createImage = (url) =>
 	new Promise((resolve, reject) => {
@@ -55,7 +51,6 @@ export default async function getCroppedImg(imageSrc, pixelCrop, rotation = 0) {
 	);
 
 	// As Base64 string
-	// return canvas.toDataURL("image/jpeg");
 	return canvas;
 }
 

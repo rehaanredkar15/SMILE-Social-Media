@@ -32,7 +32,6 @@ const Notifications = ({notifications}) => {
                     }
                     alt=""
                 />
-           {/* <span className="conversationName">{user?.username}</span> */}
         {
         notifications.type == 'message' ? 
         <span className="notification">

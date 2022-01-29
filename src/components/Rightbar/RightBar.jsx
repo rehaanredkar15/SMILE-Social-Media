@@ -1,6 +1,5 @@
 import React,{useEffect ,useState,useContext,useRef} from 'react'
 import './RightBar.css';
-import { Users} from '../../dummyData';
 import OnlineFriends from '../OnlineFriends/OnlineFriends.jsx';
 import Notifications from '../Notifications/Notifications.jsx';
 import axios from 'axios';

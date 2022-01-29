@@ -1,16 +1,10 @@
 import React from 'react'
 import './Topbar.css';
-// import { Search } from "@material-ui/icons";
 import {Search,Person,Chat,Notifications } from "@material-ui/icons";
 import {useRef,useContext,useEffect,useState} from 'react'
 import { AuthContext } from '../../Context/AuthContext';
 import axios from 'axios';
 import { Link } from "react-router-dom";
-import ContactsTwoToneIcon from '@mui/icons-material/ContactsTwoTone';
-import MapsHomeWorkTwoToneIcon from '@mui/icons-material/MapsHomeWorkTwoTone';
-import TextsmsTwoToneIcon from '@mui/icons-material/TextsmsTwoTone';
-import AccountCircleTwoToneIcon from '@mui/icons-material/AccountCircleTwoTone';
-import SettingsApplicationsTwoToneIcon from '@mui/icons-material/SettingsApplicationsTwoTone';
 import { LogoutCall } from '../../pages/APICalls.js';
 
 const TopBar = () => {

@@ -27,7 +27,7 @@ function App() {
 
 
   useEffect(() => {
-  //  socket.current = io("");
+
     setSocket(io("ws://localhost:8900"));
   }, []);
   return (
@@ -36,7 +36,7 @@ function App() {
        <Routes>
          <Route path="/" element={user ? <Home  socket={socket} /> : <Navigate to="/login"/> } />
          <Route path="/login" element={user ? <Navigate to="/"/> : <Login />   } />
-   b         <Route path="/register" element={user ? <Navigate to="/"/> : <Register />} />
+   b      <Route path="/register" element={user ? <Navigate to="/"/> : <Register />} />
          <Route path="/login/forgotPassword" element={user ? <Navigate to="/"/> : <ForgotPassword/>} />
          <Route path="/resetpassword/:resetToken" element={user ? <Navigate to="/"/> : <ResetPassword/> } /> 
          <Route path="/profile/:username" element={user ? <Profile/> : <Navigate to="/login"/>} />
@@ -44,6 +44,7 @@ function App() {
          <Route path ="/posts/:postId" element={user ?  <EditPost/>: <Navigate to="/login"/>} />
          <Route path ="/explore" element={user ?  <Explore/>: <Navigate to="/login"/>} />
          <Route path ="/chatSection" element={user ?  <Chat  socket={socket} />: <Navigate to="/login"/>} />
+         <Route path="*" element={user ? <Navigate to="/"/> : <Login /> } />
        </Routes>
       </BrowserRouter>
     </>

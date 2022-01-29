@@ -1,7 +1,5 @@
 import React,{useContext,useRef,useState,useEffect} from 'react';
 import PhotoSizeSelectActualTwoToneIcon from '@mui/icons-material/PhotoSizeSelectActualTwoTone';
-import SentimentSatisfiedTwoToneIcon from '@mui/icons-material/SentimentSatisfiedTwoTone';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { AuthContext } from '../../Context/AuthContext';
 import { CircularProgress } from "@material-ui/core";
 import axios from 'axios';
@@ -71,7 +69,6 @@ const ShareModal = ({ OpeningModal }) => {
               </form>
              </div> 
         </div>
-        // </div>
      )
     
 }

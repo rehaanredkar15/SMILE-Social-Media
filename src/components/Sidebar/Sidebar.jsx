@@ -1,12 +1,5 @@
 import React ,{useEffect,useState} from 'react'
 import './Sidebar.css';
-import ContactsTwoToneIcon from '@mui/icons-material/ContactsTwoTone';
-import MapsHomeWorkTwoToneIcon from '@mui/icons-material/MapsHomeWorkTwoTone';
-import TextsmsTwoToneIcon from '@mui/icons-material/TextsmsTwoTone';
-import AccountCircleTwoToneIcon from '@mui/icons-material/AccountCircleTwoTone';
-import SettingsApplicationsTwoToneIcon from '@mui/icons-material/SettingsApplicationsTwoTone';
-import EventNoteTwoToneIcon from '@mui/icons-material/EventNoteTwoTone';
-import { Users} from '../../dummyData';
 import { Link } from "react-router-dom";
 import {useRef,useContext} from 'react'
 import { AuthContext } from '../../Context/AuthContext';

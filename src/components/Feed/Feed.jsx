@@ -5,7 +5,6 @@ import Post from '../Post/Post.jsx';
 import axios from 'axios';
 import { AuthContext } from '../../Context/AuthContext';
 import { PostContext } from '../../Context/PostContext/PostContext';
-// import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 
 
