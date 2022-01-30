@@ -34,7 +34,7 @@ const ShareModal = ({ OpeningModal }) => {
      e.preventDefault();
 
         const fetchUser = async () => {
-              const res = await axios.put("hhttps://smilesocialapp.herokuapp.com/api/user/"+user._id,Form)
+              const res = await axios.put("https://smilesocialapp.herokuapp.com/api/user/"+user._id,Form)
 
               localStorage.setItem('user',JSON.stringify(res.data));
          }

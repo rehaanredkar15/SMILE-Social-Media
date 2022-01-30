@@ -39,20 +39,26 @@ const TopBar = () => {
             <div className="topBarCenter"> 
              <div className="topBarIcons">
              <div className="IconsItem">
+
+
+
+
+
+
               <Link to="/" style={{textDecoration:"none"}}>
-                 <img src="http://localhost:3000/Assets/Icons/home.png" alt="" className="IconsTop"/>
+                  <img src="https://github.com/rehaanredkar15/SMILE-Social-Media/blob/master/public/Assets/Icons/compass.png" alt=""  className="IconsTop"/>
                   </Link>
              </div>
 
              <div className="IconsItem">
                   <Link to="/ChatSection" style={{textDecoration:"none"}}>
-                 <img src="http://localhost:3000/Assets/Icons/msg.png" alt="" className="IconsTop"/>                  
+                   <img src="https://github.com/rehaanredkar15/SMILE-Social-Media/blob/master/public/Assets/Icons/chat.png" alt=""  className="IconsTop"/>                
                   </Link> 
              </div>
 
              <div className="IconsItem">
                    <Link to = "/explore" style={{textDecoration:"none"}}> 
-                 <img src="http://localhost:3000/Assets/Icons/compass.png" alt="" className="IconsTop"/>                   
+                 <img src="https://github.com/rehaanredkar15/SMILE-Social-Media/blob/master/public/Assets/Icons/userEdt.png" alt="" className="IconsTop"/>                   
                  </Link>
              </div>
              </div>
