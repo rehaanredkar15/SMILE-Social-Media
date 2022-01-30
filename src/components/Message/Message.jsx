@@ -6,8 +6,8 @@ import { useContext, useEffect, useRef, useState } from "react";
 export default function Message({ message, own ,currentUser,friend}) {
  
 
- const profile = currentUser?.profilePicture ? currentUser.profilePicture :  "https://smilesocialapp.herokuapp.com/Assets/person/user.webp";
- const friendprofile = friend?.profilePicture ? friend.profilePicture :  "https://smilesocialapp.herokuapp.com/Assets/person/user.webp";
+ const profile = currentUser?.profilePicture ? currentUser.profilePicture :  "https://raw.githubusercontent.com/rehaanredkar15/SMILE-Social-Media/master/public/Assets/person/user.webp";
+ const friendprofile = friend?.profilePicture ? friend.profilePicture :  "https://raw.githubusercontent.com/rehaanredkar15/SMILE-Social-Media/master/public/Assets/person/user.webp";
        const scrollRef = useRef();
 
 

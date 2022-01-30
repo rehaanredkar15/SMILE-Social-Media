@@ -46,19 +46,19 @@ const TopBar = () => {
 
 
               <Link to="/" style={{textDecoration:"none"}}>
-                  <img src="https://github.com/rehaanredkar15/SMILE-Social-Media/blob/master/public/Assets/Icons/compass.png" alt=""  className="IconsTop"/>
+                  <img src="https://github.com/rehaanredkar15/SMILE-Social-Media/blob/master/public/Assets/Icons/home.png?raw=true" alt=""  className="IconsTop"/>
                   </Link>
              </div>
 
              <div className="IconsItem">
                   <Link to="/ChatSection" style={{textDecoration:"none"}}>
-                   <img src="https://github.com/rehaanredkar15/SMILE-Social-Media/blob/master/public/Assets/Icons/chat.png" alt=""  className="IconsTop"/>                
+                   <img src="https://github.com/rehaanredkar15/SMILE-Social-Media/blob/master/public/Assets/Icons/chat.png?raw=true" alt=""  className="IconsTop"/>                
                   </Link> 
              </div>
 
              <div className="IconsItem">
                    <Link to = "/explore" style={{textDecoration:"none"}}> 
-                 <img src="https://github.com/rehaanredkar15/SMILE-Social-Media/blob/master/public/Assets/Icons/userEdt.png" alt="" className="IconsTop"/>                   
+                 <img src="https://github.com/rehaanredkar15/SMILE-Social-Media/blob/master/public/Assets/Icons/compass.png?raw=true" alt="" className="IconsTop"/>                   
                  </Link>
              </div>
              </div>
@@ -73,7 +73,7 @@ const TopBar = () => {
                   
                </div>
                <div className="topBarIcons">
-               <img src={user.profilePicture? user.profilePicture : "http://localhost:3000/Assets/person/user.webp"}  className="topbarImg" />
+               <img src={user.profilePicture? user.profilePicture : "https://raw.githubusercontent.com/rehaanredkar15/SMILE-Social-Media/master/public/Assets/person/user.webp"}  className="topbarImg" />
                </div>
 
               </div>

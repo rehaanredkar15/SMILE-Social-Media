@@ -130,12 +130,12 @@ const Profile = () => {
                 <div className="profileCover">
                  <img
                 className="profileCoverImg"
-                src={current.coverPicture? current.coverPicture : "http://localhost:3000/Assets/cover.jpg"}
+                src={current.coverPicture? current.coverPicture : "https://github.com/rehaanredkar15/SMILE-Social-Media/blob/master/public/Assets/person/cover1.jpg?raw=true"}
                 alt=""
               />
               <img
                 className="profileUserImg"
-                src={current.profilePicture? current.profilePicture : "http://localhost:3000/Assets/person/user.webp"}
+                src={current.profilePicture? current.profilePicture : "https://raw.githubusercontent.com/rehaanredkar15/SMILE-Social-Media/master/public/Assets/person/user.webp"}
                 alt=""
               />
             </div>

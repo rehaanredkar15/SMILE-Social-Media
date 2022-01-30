@@ -114,7 +114,7 @@ const Share = ({postId}) => {
               }
                <div className="profileDiv"> 
                <Link to = {`/profile/${user.username}`}>
-               <img className = "shareProfileImg" src={user.profilePicture? user.profilePicture : "http://localhost:3000/Assets/person/user.webp"} alt="" />
+               <img className = "shareProfileImg" src={user.profilePicture? user.profilePicture : "https://raw.githubusercontent.com/rehaanredkar15/SMILE-Social-Media/master/public/Assets/person/user.webp"} alt="" />
                </Link>
                </div>
                 <input placeholder={postId ? "Select a new image and write the description if you want to change":"What's on your mind " + user.username + "  ? "} ref={desc} className = "shareInput" />

@@ -77,7 +77,7 @@ const Sidebar = () => {
              <div className="Profile">
                <div className="ProfileImage">
                   <Link to = {`/profile/${Current.username}`}>
-               <img src={Current.profilePicture? Current.profilePicture : "http://localhost:3000/Assets/person/user.webp"}  className="ProfileImg" />
+               <img src={Current.profilePicture? Current.profilePicture : "https://raw.githubusercontent.com/rehaanredkar15/SMILE-Social-Media/master/public/Assets/person/user.webp"}  className="ProfileImg" />
                  </Link>
 
                </div>
@@ -122,7 +122,7 @@ const Sidebar = () => {
                                <li className="sidebarFriend">
                                <div className = "FriendDetails">
                                     <Link to = {`/profile/${val.username}`}>
-                                    <img  src={ val?.profilePicture?  val.profilePicture :"http://localhost:3000/Assets/person/user.webp"}
+                                    <img  src={ val?.profilePicture?  val.profilePicture :"https://raw.githubusercontent.com/rehaanredkar15/SMILE-Social-Media/master/public/Assets/person/user.webp"}
                                         alt="" className="sidebarFriendImg" />
                                     </Link>
                                     <span className="sidebarFriendName"> {val.username}</span>
@@ -145,7 +145,7 @@ const Sidebar = () => {
                                <li className="sidebarFriend">
                                <div className = "FriendDetails">
                                     <Link to = {`/profile/${u.username}`}>
-                                    <img  src={ u?.profilePicture?  u.profilePicture :"http://localhost:3000/Assets/person/user.webp"}
+                                    <img  src={ u?.profilePicture?  u.profilePicture :"https://raw.githubusercontent.com/rehaanredkar15/SMILE-Social-Media/master/public/Assets/person/user.webp"}
                                         alt="" className="sidebarFriendImg" />
                                     </Link>
                                     <span className="sidebarFriendName"> {u.username}</span>

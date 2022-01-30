@@ -123,7 +123,7 @@ export default function RightBar({users,socket}){
                 <div className="Options">
                  <ul className = "sidebarList">
                   <li className="sidebarListItem">     
-                   <img src="https://github.com/rehaanredkar15/SMILE-Social-Media/blob/master/public/Assets/Icons/home.png" alt="" className="Icons"/>
+                   <img src="https://github.com/rehaanredkar15/SMILE-Social-Media/blob/master/public/Assets/Icons/home.png?raw=true" alt="" className="Icons"/>
                    <Link to="/" style={{textDecoration:"none"}}>
                         <span className="sidebarListItemText"> Home </span>
                   </Link>
@@ -132,7 +132,7 @@ export default function RightBar({users,socket}){
                  <hr className = "sidebarHr"/>
 
                    <li className="sidebarListItem"> 
-                  <img src="https://github.com/rehaanredkar15/SMILE-Social-Media/blob/master/public/Assets/Icons/compass.png" alt="" className="Icons"/>
+                  <img src="https://github.com/rehaanredkar15/SMILE-Social-Media/blob/master/public/Assets/Icons/compass.png?raw=true" alt="" className="Icons"/>
                    <Link to="/explore" style={{textDecoration:"none"}}>
                    <span className="sidebarListItemText"> Explore </span>
                    </Link> 
@@ -140,14 +140,14 @@ export default function RightBar({users,socket}){
 
                   <hr className = "sidebarHr"/>
                   <li className="sidebarListItem">
-                   <img src="https://github.com/rehaanredkar15/SMILE-Social-Media/blob/master/public/Assets/Icons/chat.png" alt="" className="Icons"/>
+                   <img src="https://github.com/rehaanredkar15/SMILE-Social-Media/blob/master/public/Assets/Icons/chat.png?raw=true" alt="" className="Icons"/>
                   <Link to="/ChatSection" style={{textDecoration:"none"}}>
                   <span className="sidebarListItemText" >Messages </span>
                    </Link> 
                   </li>
                    <hr className = "sidebarHr"/>
                   <li className="sidebarListItem">
-                  <img src="https://github.com/rehaanredkar15/SMILE-Social-Media/blob/master/public/Assets/Icons/userEdt.png" alt="" className="Icons"/>
+                  <img src="https://github.com/rehaanredkar15/SMILE-Social-Media/blob/master/public/Assets/Icons/userEdt.png?raw=true" alt="" className="Icons"/>
                    <Link to = {`/userProfile/${CurrentUser.username}`} style={{textDecoration:"none"}}> 
                    <span className="sidebarListItemText">Edit  Profile</span>
                    </Link>
@@ -161,7 +161,7 @@ export default function RightBar({users,socket}){
                 <div className="title">
               
                <h4 className="rightBarTitle">
-                <img src="https://github.com/rehaanredkar15/SMILE-Social-Media/blob/master/public/Assets/Icons/notification.png" alt="" className="iconsright"/>
+                <img src="https://github.com/rehaanredkar15/SMILE-Social-Media/blob/master/public/Assets/Icons/notification.png?raw=true" alt="" className="iconsright"/>
                 Notifications : { notifications.length > 0 && notifications.length}</h4>
                 </div>
                 <ul className="rightBarFriendList">
@@ -169,7 +169,7 @@ export default function RightBar({users,socket}){
                               <Notifications notifications={n}   />
                           ))
                           :  <img 
-                       src="https://github.com/rehaanredkar15/SMILE-Social-Media/blob/master/public/Assets/person/notify.gif"
+                       src="https://github.com/rehaanredkar15/SMILE-Social-Media/blob/master/public/Assets/person/notify.gif?raw=true"
                       alt="" 
                     className="notify"/> 
                           }
@@ -209,7 +209,7 @@ export default function RightBar({users,socket}){
                 </button>
                 {
                     
-                   Loading && <img src="https://smilesocialapp.herokuapp.com/Assets/person/loading.gif" alt="" className="Icons"/>
+                   Loading && <img src="https://github.com/rehaanredkar15/SMILE-Social-Media/blob/master/public/Assets/person/loading.gif?raw=true" alt="" className="IconsR"/>
                 }
                   </div>
                 </>

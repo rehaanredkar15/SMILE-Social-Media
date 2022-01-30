@@ -31,7 +31,7 @@ const Conversation = ({ conversation, currentUser }) => {
         src={
           user?.profilePicture
             ? user.profilePicture
-            :  "http://localhost:3000/Assets/person/user.webp"
+            :  "https://raw.githubusercontent.com/rehaanredkar15/SMILE-Social-Media/master/public/Assets/person/user.webp"
         }
         alt=""
       />

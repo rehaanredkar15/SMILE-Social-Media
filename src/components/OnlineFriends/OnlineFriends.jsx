@@ -92,7 +92,7 @@ export default function OnlineFriends ({  currentId ,conversations}) {
               src={
                 o?.profilePicture
                   ?  o.profilePicture
-                  :"https://github.com/rehaanredkar15/SMILE-Social-Media/blob/master/public/Assets/person/user.webp"
+                  :"https://raw.githubusercontent.com/rehaanredkar15/SMILE-Social-Media/master/public/Assets/person/user.webp"
 
               }
               alt=""

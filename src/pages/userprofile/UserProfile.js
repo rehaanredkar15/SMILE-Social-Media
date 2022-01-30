@@ -110,7 +110,7 @@ const UserProfile = () => {
                      </label>
                           <img
                             className="userprofileUserImg"
-                            src={users.profilePicture? users.profilePicture : "http://localhost:3000/Assets/person/user.webp"}
+                            src={users.profilePicture? users.profilePicture : "https://raw.githubusercontent.com/rehaanredkar15/SMILE-Social-Media/master/public/Assets/person/user.webp"}
                             alt=""
                           />
                            <span className="Online" >

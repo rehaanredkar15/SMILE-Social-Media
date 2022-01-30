@@ -28,7 +28,7 @@ const Notifications = ({notifications}) => {
                     src={
                      User?.profilePicture
                         ? User.profilePicture
-                        :  "https://smilesocialapp.herokuapp.com/Assets/person/unknown.jpg"
+                        :  "https://raw.githubusercontent.com/rehaanredkar15/SMILE-Social-Media/master/public/Assets/person/user.webp"
                     }
                     alt=""
                 />

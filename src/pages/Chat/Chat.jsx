@@ -126,7 +126,7 @@ const Chat = ({socket}) => {
                                     Open a conversation to start a chat.
                                     <div className="inboxdiv" >
                                       <img 
-                                    src="https://github.com/rehaanredkar15/SMILE-Social-Media/blob/master/public/Assets/Icons/1.gif"
+                                    src="https://github.com/rehaanredkar15/SMILE-Social-Media/blob/master/public/Assets/person/1-min%20(2).gif?raw=true"
                                     alt="" 
                                     className="inbox"/> 
                                     </div>

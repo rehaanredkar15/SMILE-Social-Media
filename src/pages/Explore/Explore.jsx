@@ -23,9 +23,7 @@ const Explore = () => {
          fetchPost();
      }, [])
 
-
-
-
+ 
 
     return (
          <>
@@ -39,10 +37,18 @@ const Explore = () => {
                             </div>
                             <div className="PostsWall">
                                
-                                {ExplorePosts.map((p) => (
+                                {ExplorePosts.length > 0 ? ExplorePosts.map((p) => (
                                    <div className="postCover">
                                         <Post key={p._id} post={p}/>
-                                   </div>))
+                                   </div>)):<>
+                                    <h1>Fetching Your Posts...</h1>
+                                    <div className="Error" > 
+                                    <img 
+                                    src="https://github.com/rehaanredkar15/SMILE-Social-Media/blob/master/public/Assets/person/fetching.gif?raw=true"
+                                    alt="" 
+                                    className="fetching"/> 
+                                    </div>
+                                      </>
                                        }
                             </div>
                             </div>

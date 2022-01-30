@@ -208,7 +208,7 @@ const Crop = ({handleCropper,Picture}) => {
 				</Button>
 				  {
                     
-                   Loading && <img src="http://localhost:3000/Assets/person/loading.gif" alt="" className="Icons"/>
+                   Loading && <img src="https://github.com/rehaanredkar15/SMILE-Social-Media/blob/master/public/Assets/person/loading.gif?raw=true" alt="" className="IconsR"/>
                 }
 				</div>
 

@@ -70,7 +70,7 @@ const Post = ({post,socket}) => {
                   <div className="postTopLeft">
                      <div>
                      <Link to = {`/profile/${user.username}`}>                     
-                     <img className = "postProfileImg" src={user.profilePicture? user.profilePicture : "http://localhost:3000/Assets/person/user.webp"} alt="" />
+                     <img className = "postProfileImg" src={user.profilePicture? user.profilePicture : "https://raw.githubusercontent.com/rehaanredkar15/SMILE-Social-Media/master/public/Assets/person/user.webp"} alt="" />
                      </Link>
                      </div>
                      <div className="postDetails">
