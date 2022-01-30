@@ -28,8 +28,13 @@ function App() {
 
   useEffect(() => {
 
-    setSocket(io("ws:https://smilesocketapp.herokuapp.com/"));
+    setSocket(io("https://socketsocialapp.herokuapp.com/"));
+
+   
   }, []);
+
+
+  console.log(socket);
   return (
     <>
       <BrowserRouter>

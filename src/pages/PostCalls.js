@@ -9,7 +9,7 @@ export const DeletePostCall = async (userId,postId) => {
    
 
      const res = await axios.delete("posts/" + postId );
-    // window.location.reload();
+     window.location.reload(); 
     }
     catch(err)
     {

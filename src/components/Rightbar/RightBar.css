@@ -43,6 +43,7 @@
 
 .rightBarTitle{
     display:flex;
+    align-items: center;
     background-color:inherit;
     color:rgb(85, 83, 83);
     float:left;
@@ -80,8 +81,7 @@
 
 .sidebarListItem{
 
-    padding-left: 10px;
-    padding: 13px;
+    padding: 6px;
     display:flex;
     align-items: center;
     cursor: pointer;
@@ -263,14 +263,20 @@
           cursor:pointer;
 }
 
+.iconsright{
+     height: 3.2rem;
+
+}
+
+
 .Icons{
-    height:30px;
+    height:3.5rem;
     margin-right: 10px;
 }
 .notify{
-    height:10rem;
+    height:8rem;
     margin-left: 3rem;
-    width:10rem;
+    width:8rem;
 }
 .btn-logo{
     display: flex;

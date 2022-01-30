@@ -52,7 +52,7 @@ const TopBar = () => {
 
              <div className="IconsItem">
                    <Link to = "/explore" style={{textDecoration:"none"}}> 
-                 <img src="http://localhost:3000/Assets/Icons/explore.png" alt="" className="IconsTop"/>                   
+                 <img src="http://localhost:3000/Assets/Icons/compass.png" alt="" className="IconsTop"/>                   
                  </Link>
              </div>
              </div>

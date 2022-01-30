@@ -40,7 +40,7 @@ const Post = ({post,socket}) => {
     const DeleteHandler = () =>{
        
         DeletePostCall(post.userId ,post._id);
-        window.location.reload();
+  
     }
     
     //updation
