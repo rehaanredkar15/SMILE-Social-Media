@@ -123,7 +123,7 @@ export default function RightBar({users,socket}){
                 <div className="Options">
                  <ul className = "sidebarList">
                   <li className="sidebarListItem">     
-                   <img src="http://localhost:3000/Assets/Icons/home.png" alt="" className="Icons"/>
+                   <img src="https://smilesocialapp.herokuapp.com/Assets/Icons/home.png" alt="" className="Icons"/>
                    <Link to="/" style={{textDecoration:"none"}}>
                         <span className="sidebarListItemText"> Home </span>
                   </Link>
@@ -132,7 +132,7 @@ export default function RightBar({users,socket}){
                  <hr className = "sidebarHr"/>
 
                    <li className="sidebarListItem"> 
-                  <img src="http://localhost:3000/Assets/Icons/compass.png" alt="" className="Icons"/>
+                  <img src="https://smilesocialapp.herokuapp.com/Assets/Icons/compass.png" alt="" className="Icons"/>
                    <Link to="/explore" style={{textDecoration:"none"}}>
                    <span className="sidebarListItemText"> Explore </span>
                    </Link> 
@@ -140,14 +140,14 @@ export default function RightBar({users,socket}){
 
                   <hr className = "sidebarHr"/>
                   <li className="sidebarListItem">
-                   <img src="	http://localhost:3000/Assets/Icons/msg.png" alt="" className="Icons"/>
+                   <img src="	https://smilesocialapp.herokuapp.com/Assets/Icons/msg.png" alt="" className="Icons"/>
                   <Link to="/ChatSection" style={{textDecoration:"none"}}>
                   <span className="sidebarListItemText" >Messages </span>
                    </Link> 
                   </li>
                    <hr className = "sidebarHr"/>
                   <li className="sidebarListItem">
-                  <img src="http://localhost:3000/Assets/Icons/userEdt.png" alt="" className="Icons"/>
+                  <img src="https://smilesocialapp.herokuapp.com/Assets/Icons/userEdt.png" alt="" className="Icons"/>
                    <Link to = {`/userProfile/${CurrentUser.username}`} style={{textDecoration:"none"}}> 
                    <span className="sidebarListItemText">Edit  Profile</span>
                    </Link>
@@ -161,7 +161,7 @@ export default function RightBar({users,socket}){
                 <div className="title">
               
                <h4 className="rightBarTitle">
-                <img src="http://localhost:3000/Assets/Icons/notification.png" alt="" className="iconsright"/>
+                <img src="https://smilesocialapp.herokuapp.com/Assets/Icons/notification.png" alt="" className="iconsright"/>
                 Notifications : { notifications.length > 0 && notifications.length}</h4>
                 </div>
                 <ul className="rightBarFriendList">
@@ -169,7 +169,7 @@ export default function RightBar({users,socket}){
                               <Notifications notifications={n}   />
                           ))
                           :  <img 
-                       src="http://localhost:3000/Assets/person/notify.gif"
+                       src="https://smilesocialapp.herokuapp.com/api/Assets/person/notify.gif"
                       alt="" 
                     className="notify"/> 
                           }
@@ -178,7 +178,7 @@ export default function RightBar({users,socket}){
               </div>
                 <div className="friendsListWrapper">   
                 <h4 className="rightBarTitle">
-                <img src="http://localhost:3000/Assets/Icons/onlinefriends.png" alt="" className="iconsright"/>
+                <img src="https://smilesocialapp.herokuapp.com/Assets/Icons/onlinefriends.png" alt="" className="iconsright"/>
                 Online Friends  :</h4>
                 <ul className="rightBarFriend">
                        <Link to="/ChatSection" style={{textDecoration:"none"}}>
@@ -210,7 +210,7 @@ export default function RightBar({users,socket}){
                 </button>
                 {
                     
-                   Loading && <img src="http://localhost:3000/Assets/person/loading.gif" alt="" className="Icons"/>
+                   Loading && <img src="https://smilesocialapp.herokuapp.com/Assets/person/loading.gif" alt="" className="Icons"/>
                 }
                   </div>
                 </>
