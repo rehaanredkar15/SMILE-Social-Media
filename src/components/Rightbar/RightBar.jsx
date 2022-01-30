@@ -169,7 +169,7 @@ export default function RightBar({users,socket}){
                               <Notifications notifications={n}   />
                           ))
                           :  <img 
-                       src="https://smilesocialapp.herokuapp.com/api/Assets/person/notify.gif"
+                       src="https://github.com/rehaanredkar15/SMILE-Social-Media/blob/master/public/Assets/person/notify.gif"
                       alt="" 
                     className="notify"/> 
                           }
@@ -178,7 +178,6 @@ export default function RightBar({users,socket}){
               </div>
                 <div className="friendsListWrapper">   
                 <h4 className="rightBarTitle">
-                <img src="https://smilesocialapp.herokuapp.com/Assets/Icons/onlinefriends.png" alt="" className="iconsright"/>
                 Online Friends  :</h4>
                 <ul className="rightBarFriend">
                        <Link to="/ChatSection" style={{textDecoration:"none"}}>

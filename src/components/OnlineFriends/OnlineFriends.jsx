@@ -92,7 +92,7 @@ export default function OnlineFriends ({  currentId ,conversations}) {
               src={
                 o?.profilePicture
                   ?  o.profilePicture
-                  :"http://localhost:3000/Assets/person/user.webp"
+                  :"https://github.com/rehaanredkar15/SMILE-Social-Media/blob/master/public/Assets/person/user.webp"
 
               }
               alt=""
@@ -103,10 +103,6 @@ export default function OnlineFriends ({  currentId ,conversations}) {
         </div>
       )):   <>
             <h3>No Online Friends</h3> 
-            <img 
-                       src="http://localhost:3000/Assets/Icons/noonline2.gif"
-                      alt="" 
-                    className="notify"/> 
                     </>
       }
     </div>

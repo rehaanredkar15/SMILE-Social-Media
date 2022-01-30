@@ -58,7 +58,7 @@ const Feed = ({username,socket}) => {
               { 
                error &&  <div className="Error" >
                 <img 
-               src="http://localhost:3000/Assets/person/nointernet.gif"
+               src="https://github.com/rehaanredkar15/SMILE-Social-Media/blob/master/public/Assets/person/nointernet.gif"
                alt="" 
                className="image"/> 
               </div>
@@ -69,7 +69,7 @@ const Feed = ({username,socket}) => {
              <h1>Fetching Your Posts...</h1>
               <div className="Error" > 
               <img 
-               src="http://localhost:3000/Assets/person/fetching.gif"
+               src="https://github.com/rehaanredkar15/SMILE-Social-Media/blob/master/public/Assets/person/fetching.gif"
                alt="" 
                className="fetching"/> 
               </div>
