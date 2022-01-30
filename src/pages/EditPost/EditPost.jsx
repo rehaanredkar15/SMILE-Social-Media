@@ -23,9 +23,9 @@ const EditPost = () => {
                 useEffect(() => {
 
          const fetchPost = async () => {
-              const res = await axios.get("/posts/" + postId )
+              const res = await axios.get("https://smilesocialapp.herokuapp.com/api/posts/" + postId )
             
-             //here the fetch function is required to make the api request 
+           
               setPosts(res.data);
          }
          fetchPost();
@@ -53,8 +53,6 @@ const EditPost = () => {
                             </div>
                         </div>
                   <RightBar/>
-                   {/* ShareComponents */}
-                   {/* here we will have the post component <post/> */}
                   
             </div>
         </>

@@ -13,7 +13,7 @@ const Explore = () => {
 
      useEffect(() => {
          const fetchPost = async () => {
-              const res = await axios.get("/posts/explore");
+              const res = await axios.get("https://smilesocialapp.herokuapp.com/api/posts/explore");
 
             setExplorePosts(res.data.sort((p1,p2)=>{
                 return new Date(p1.createdAt)  - new Date(p2.createdAt);

@@ -61,7 +61,7 @@ export default function RightBar({users,socket}){
             try {
                 if(users?._id)
                 {
-                const friendList = await axios.get("/user/friends/" + users?._id);
+                const friendList = await axios.get("https://smilesocialapp.herokuapp.com/api/user/friends/" + users?._id);
                 setFriends(friendList.data);
                 }
             } catch (err) {
@@ -79,13 +79,13 @@ export default function RightBar({users,socket}){
          setLoading(true);
          try{
              if(Follow){
-                await axios.put("/user/" + users._id + "/unfollow",{
+                await axios.put("https://smilesocialapp.herokuapp.com/api/user/" + users._id + "/unfollow",{
                     userId : CurrentUser._id,
                 })
                 dispatch({ type: "UNFOLLOW", payload: users._id });
                 setLoading(false);
              }else{ 
-                 await axios.put("/user/" + users._id + "/follow",{
+                 await axios.put("https://smilesocialapp.herokuapp.com/api/user/" + users._id + "/follow",{
                      userId:CurrentUser._id,
                  })
                  setLoading(false);
@@ -105,7 +105,7 @@ export default function RightBar({users,socket}){
      useEffect(() => {
             const getConversations = async () => {
             try {
-                const res = await axios.get("/conversations/" + CurrentUser._id);
+                const res = await axios.get("https://smilesocialapp.herokuapp.com/api/conversations/" + CurrentUser._id);
                 setConvos(res.data);
             } catch (err) {
                 console.log(err);

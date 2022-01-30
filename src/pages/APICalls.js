@@ -17,7 +17,7 @@ export const LoginCall = async (userCredential,dispatch,dispatched) => {
 
       const res2 = localStorage.setItem('token',res1.data.token);
 
-
+     
      const res = await axios.get("https://smilesocialapp.herokuapp.com/api/auth/login/userdetails",{headers: {
             'authorization': res1.data.token}});
 

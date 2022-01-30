@@ -9,7 +9,7 @@ const Notifications = ({notifications}) => {
     useEffect(() => {
     const getUser = async () => {
       try {
-        const res = await axios.get("/user?username=" + notifications.senderName);
+        const res = await axios.get("https://smilesocialapp.herokuapp.com/api/user?username=" + notifications.senderName);
         setUser(res.data);
       } catch (err) {
         console.log(err);
@@ -28,7 +28,7 @@ const Notifications = ({notifications}) => {
                     src={
                      User?.profilePicture
                         ? User.profilePicture
-                        :  "http://localhost:3000/Assets/person/unknown.jpg"
+                        :  "https://smilesocialapp.herokuapp.com/Assets/person/unknown.jpg"
                     }
                     alt=""
                 />

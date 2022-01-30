@@ -20,9 +20,7 @@ import { CurrentChatContext } from "../../Context/CurrentChat/CurrentChatContext
 
 const useStyles = makeStyles({
 	iconButton: {
-		// position: "relative",
-		// top: "10px",
-    // marginTop:"3rem",
+	
     height:"2rem",
     width:"2rem",
     color:"red",
@@ -71,7 +69,7 @@ const UserProfile = () => {
      useEffect(() => {
 
          const fetchUser = async () => {
-              const res = await axios.get(`/user?username=${username}`)
+              const res = await axios.get(`https://smilesocialapp.herokuapp.com/api/user?username=${username}`)
              //here the fetch function is required to make the api request 
               setUsers(res.data);
          }

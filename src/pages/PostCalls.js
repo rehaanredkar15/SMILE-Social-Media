@@ -8,7 +8,7 @@ export const DeletePostCall = async (userId,postId) => {
     try {
    
 
-     const res = await axios.delete("posts/" + postId );
+     const res = await axios.delete("https://smilesocialapp.herokuapp.com/api/posts/" + postId );
      window.location.reload(); 
     }
     catch(err)

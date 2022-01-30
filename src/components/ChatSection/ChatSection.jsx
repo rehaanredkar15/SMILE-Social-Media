@@ -35,7 +35,7 @@ const ChatSection = ({currentchat,user,socket,Current}) => {
 
           const getMessages = async () => {
             try {
-                const res = await axios.get("/messages/" +currentchat._id);
+                const res = await axios.get("https://smilesocialapp.herokuapp.com/api/messages/" +currentchat._id);
                 setMessages(res.data);
             } catch (err) {
                 console.log(err);
@@ -72,7 +72,7 @@ const ChatSection = ({currentchat,user,socket,Current}) => {
       type:'message',
     });
     try {
-      const res = await axios.post("/messages", message);
+      const res = await axios.post("https://smilesocialapp.herokuapp.com/api/messages", message);
       setMessages([...messages, res.data]);
       setNewMessage("");
     } catch (err) {
