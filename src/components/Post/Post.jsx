@@ -101,7 +101,7 @@ const Post = ({post,socket}) => {
 
                 <div className="postBottom">  
                  <div className="postBottomLeft">
-                  <img src="/Assets/like.png" alt="" className="likeIcon" onClick={likeHandler}/>
+                  <img src="https://github.com/rehaanredkar15/SMILE-Social-Media/blob/master/public/Assets/person/like.png?raw=true  " alt="" className="likeIcon" onClick={likeHandler}/>
                   <span className="postLikeCounter">{like} </span>
                  </div>
                 </div>

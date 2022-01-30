@@ -27,7 +27,7 @@ const TopBar = () => {
     return (
       <>
         <div className="TopBarContainer">
-            <img src="/Assets/Logo.png" alt="profile" className="logoImg" />
+            <img src="https://github.com/rehaanredkar15/SMILE-Social-Media/blob/master/public/Assets/person/Logo.png?raw=true" alt="profile" className="logoImg" />
             <div className="topBarLeft"> 
                 <Link to ="/"  style={{textDecoration:"none"}} >
               <span className="logo"> 
