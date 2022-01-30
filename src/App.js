@@ -34,14 +34,14 @@ function App() {
   }, []);
 
 
-  console.log(socket);
+ 
   return (
     <>
       <BrowserRouter>
        <Routes>
          <Route path="/" element={user ? <Home  socket={socket} /> : <Navigate to="/login"/> } />
          <Route path="/login" element={user ? <Navigate to="/"/> : <Login />   } />
-   b      <Route path="/register" element={user ? <Navigate to="/"/> : <Register />} />
+         <Route path="/register" element={user ? <Navigate to="/"/> : <Register />} />
          <Route path="/login/forgotPassword" element={user ? <Navigate to="/"/> : <ForgotPassword/>} />
          <Route path="/resetpassword/:resetToken" element={user ? <Navigate to="/"/> : <ResetPassword/> } /> 
          <Route path="/profile/:username" element={user ? <Profile/> : <Navigate to="/login"/>} />

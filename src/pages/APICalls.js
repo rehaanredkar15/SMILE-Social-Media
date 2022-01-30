@@ -13,12 +13,12 @@ export const LoginCall = async (userCredential,dispatch,dispatched) => {
     dispatch({type:"LOGIN_START"});
 
     try {
-     const res1 = await axios.post("auth/login",userCredential);
+     const res1 = await axios.post("https://smilesocialapp.herokuapp.com/api/auth/login",userCredential);
 
       const res2 = localStorage.setItem('token',res1.data.token);
 
 
-     const res = await axios.get("auth/login/userdetails",{headers: {
+     const res = await axios.get("https://smilesocialapp.herokuapp.com/api/auth/login/userdetails",{headers: {
             'authorization': res1.data.token}});
 
 
@@ -38,7 +38,7 @@ export const LoginDetails = async () => {
     try {
 
       const res2 = localStorage.getItem('token');
-     const res = await axios.get("auth/login/userdetails",{headers: {
+     const res = await axios.get("https://smilesocialapp.herokuapp.com/api/auth/login/userdetails",{headers: {
             'authorization': res2}});
 
       return res;
@@ -56,7 +56,7 @@ export const RegisterCall = async (userCredential,dispatch,dispatched) => {
     dispatch({type:"LOGIN_START"});
     try {
      
-     const res = await axios.post("auth/register",userCredential);
+     const res = await axios.post("https://smilesocialapp.herokuapp.com/api/auth/register",userCredential);
       
      dispatch({type:"LOGIN_SUCCESS",payload:res.data})
     }
@@ -86,7 +86,7 @@ export const LogoutCall = async (user,dispatch) => {
 export const ForgotPasswordCall = async (userCredential,dispatch,navigate,dispatched) => {
 
     try {
-        const res = await axios.post("/auth/login/forgotPassword",userCredential);
+        const res = await axios.post("https://smilesocialapp.herokuapp.com/api/auth/login/forgotPassword",userCredential);
        
          const data = { snackbarOpen:true,
                         snackbarType:'success',
@@ -109,7 +109,7 @@ export const ResetPasswordCall = async (password,resetToken,navigate,dispatched)
  
     try {
     
-        const res = await axios.put("/auth/resetpassword/" + resetToken,password);
+        const res = await axios.put("https://smilesocialapp.herokuapp.com/api/auth/resetpassword/" + resetToken,password);
                     const data = { snackbarOpen:true,
                         snackbarType:'success',
                         snackbarMessage:'Password Updated !!! Redirecting you back to login'}
@@ -135,7 +135,7 @@ export const PostCall = async (formdata,dispatch) => {
     dispatch({type:"POSTING_START"});
     try {
 
-       const res = await fetch("posts/feed", {
+       const res = await fetch("https://smilesocialapp.herokuapp.com/api/posts/feed", {
               method: "POST",
               body: formdata,
             });
