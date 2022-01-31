@@ -32,24 +32,22 @@ const ShareModal = ({ OpeningModal }) => {
      
 
      e.preventDefault();
-          try {
-              const fetchUser = async () => {
+
+        const fetchUser = async () => {
               const res = await axios.put("https://smilesocial.herokuapp.com/api/user/"+user._id,Form)
 
               localStorage.setItem('user',JSON.stringify(res.data));
-              console.log('cil')
-           fetchUser();
          }
-            // navigate('/profile/'+user.username);
-          } catch (error) {
-            console.log(error);
-          }
-      
 
+         fetchUser();
 
 
 
      OpeningModal(false);
+     setTimeout(() => {
+     navigate('/profile/'+users.username);
+       
+     }, 3000);
    }
 
         const handleChange = (e) => setForm({ ...Form, [e.target.name]: e.target.value });
@@ -60,13 +58,13 @@ const ShareModal = ({ OpeningModal }) => {
        <div className = "ModalContainer">
             <div className="ModalWrapper">
             <form onSubmit={handleClick} className="ModalLogin">
-                <input placeholder={users.username ? users.username : "Enter your Username"} name="username" type="text" onChange={handleChange}  className="loginInput" />
-                <input placeholder={ users.fullname ? users.fullname : "Enter your Fullname"} name="fullname" type="text" onChange={handleChange}  className="loginInput" />
-                <input placeholder={users.desc ? users.desc : "Enter Your description "} name = "desc" type="text" onChange={handleChange} className="loginInput" />
-                <input placeholder={users.from ? users.from : "Enter your country"}  type = "text"  name="from" onChange={handleChange}  className="loginInput" />
-                <input placeholder={users.city ? users.city : "Enter your city"}  type="text" name="city" onChange={handleChange}  className="loginInput" />
-                <input placeholder={users.contact ? users.contact : "Enter your Phone Number"}  type = "text" name="contact" onChange={handleChange}    className="loginInput" />
-                <input placeholder={users.email ? users.email : "Enter your Email"}  type = "text"  name="email" onChange={handleChange} className="loginInput" />
+                <input placeholder={user.username ? users.username : "Enter your Username"} name="username" type="text" onChange={handleChange}  className="loginInput" />
+                <input placeholder={ user.fullname ? users.fullname : "Enter your Fullname"} name="fullname" type="text" onChange={handleChange}  className="loginInput" />
+                <input placeholder={user.desc ? users.desc : "Enter Your description "} name = "desc" type="text" onChange={handleChange} className="loginInput" />
+                <input placeholder={user.from ? users.from : "Enter your country"}  type = "text"  name="from" onChange={handleChange}  className="loginInput" />
+                <input placeholder={user.city ? users.city : "Enter your city"}  type="text" name="city" onChange={handleChange}  className="loginInput" />
+                <input placeholder={user.contact ? users.contact : "Enter your Phone Number"}  type = "text" name="contact" onChange={handleChange}    className="loginInput" />
+                <input placeholder={user.email ? users.email : "Enter your Email"}  type = "text"  name="email" onChange={handleChange} className="loginInput" />
 
                 <button className="ModalButton" type="submit" onClick={handleClick} >
                   Update

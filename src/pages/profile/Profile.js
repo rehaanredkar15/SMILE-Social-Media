@@ -51,7 +51,7 @@ const Profile = () => {
      useEffect(() => {
 
          const fetchUser = async () => {
-              const res = await axios.get(`https://smilesocial.herokuapp.com/api/user?username=${username}`)
+              const res = await axios.get(`https://smilesocialapp.herokuapp.com/api/user?username=${username}`)
              //here the fetch function is required to make the api request 
               setCurrent(res.data);
          }
@@ -61,7 +61,7 @@ const Profile = () => {
             useEffect(() => {
                     const getConversations = async () => {
                     try {
-                        const res = await axios.get("https://smilesocial.herokuapp.com/api/conversations/" + current._id);
+                        const res = await axios.get("https://smilesocialapp.herokuapp.com/api/conversations/" + current._id);
                         setConvers(res.data);
                     } catch (err) {
                         console.log(err);
@@ -83,14 +83,14 @@ const Profile = () => {
 
             try {
               const res = await axios.get(
-                `https://smilesocial.herokuapp.com/api/conversations/find/${user._id}/${current._id}`
+                `https://smilesocialapp.herokuapp.com/api/conversations/find/${user._id}/${current._id}`
               );
 
               
               if(res.data === null)
               {
                  try {
-                const res = await axios.post(`https://smilesocial.herokuapp.com/api/conversations/`,members);
+                const res = await axios.post(`https://smilesocialapp.herokuapp.com/api/conversations/`,members);
 
                     dispatcher({type:"CURRENTCHAT_SET",payload:res.data});
                   

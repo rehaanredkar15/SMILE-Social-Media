@@ -46,7 +46,7 @@ const UserProfile = () => {
    
      const [open, setOpen] = React.useState(false);
      const [OpenModal,SetOpenModal] = useState(false);
-     const [users,setUsers]  = useState('');
+
      const params = useParams();
      const [File,setFile] = useState('');
      const username = useParams().username;
@@ -66,7 +66,6 @@ const UserProfile = () => {
 
       const scrollToTop = () => window.scrollTo({ top: section.current.offsetTop, behavior: "smooth" });
    
-    console.log(user);
 
     const handleChange = ()=>{
 
@@ -85,7 +84,7 @@ const UserProfile = () => {
                    <div className="userprofileCover">
                             <img
                             className="userprofileCoverImg"
-                            src={users.coverPicture? users.coverPicture : "http://localhost:3000/Assets/cover.jpg"}
+                            src={user.coverPicture? user.coverPicture : "https://github.com/rehaanredkar15/SMILE-Social-Media/blob/master/public/Assets/person/cover1.jpg?raw=true"}
                             alt=""
                           />
 
@@ -101,7 +100,7 @@ const UserProfile = () => {
                      </label>
                           <img
                             className="userprofileUserImg"
-                            src={users.profilePicture? users.profilePicture : "https://raw.githubusercontent.com/rehaanredkar15/SMILE-Social-Media/master/public/Assets/person/user.webp"}
+                            src={user.profilePicture? user.profilePicture : "https://raw.githubusercontent.com/rehaanredkar15/SMILE-Social-Media/master/public/Assets/person/user.webp"}
                             alt=""
                           />
                            <span className="Online" >
@@ -117,8 +116,8 @@ const UserProfile = () => {
 
                     <div>
                        <div className="userprofileInfo">
-                          <h4 className="userprofileInfoName"> {users.username} </h4>
-                          <span className="userprofileInfoDesc">{users.desc}</span>
+                          <h4 className="userprofileInfoName"> {user.username} </h4>
+                          <span className="userprofileInfoDesc">{user.desc}</span>
                        </div>
                      </div>    
            {showCropper && <Crop handleCropper={handleCropper} Picture={Picture}/>}
@@ -136,19 +135,19 @@ const UserProfile = () => {
                   
                   <div className="rightbarInfoItem" >
                           <span className="rightbarInfoKey">City: </span>
-                          <span className="rightbarInfoValue">{users.city} </span>
+                          <span className="rightbarInfoValue">{user.city} </span>
                   </div>
                   <div className="rightbarInfoItem">
                           <span className="rightbarInfoKey">From: </span>
-                          <span className="rightbarInfoValue"> { users.from} </span>
+                          <span className="rightbarInfoValue"> { user.from} </span>
                   </div>
                   <div className="rightbarInfoItem">
                       <span className="rightbarInfoKey">Contact details: </span>
-                      <span className="rightbarInfoValue"> { users.contact} </span>
+                      <span className="rightbarInfoValue"> { user.contact} </span>
                     </div>
                     <div className="rightbarInfoItem">
                         <span className="rightbarInfoKey">Email: </span>
-                        <span className="rightbarInfoValue"> { users.email} </span>
+                        <span className="rightbarInfoValue"> { user.email} </span>
                       </div>
                    </div>
                  </div>
