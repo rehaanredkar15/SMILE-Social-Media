@@ -1,13 +1,15 @@
 import React from 'react'
 import './Register.css';
 import {useRef,useContext,useState,useEffect} from 'react'
-import {  RegisterCall } from '../APICalls';
+import {  RegisterCall,LoginDetails } from '../APICalls';
 import { AuthContext } from '../../Context/AuthContext';
 import { CircularProgress } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import { SnackbarContext } from "../../Context/Snackbar/SnackbarContext";
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
+import { useNavigate,useParams } from "react-router-dom";
+
 
 const initialState = { snackbarOpen:false,snackbarType:'',snackbarMessage:''}
 
@@ -21,6 +23,7 @@ export default  function Register ()  {
     const email = useRef();
    const password = useRef();
    const username= useRef();
+   const navigate = useNavigate();
    const confirmPassword = useRef();
    const { user,isFetching,error,dispatch} = useContext(AuthContext);
    const [Data, setData] = useState(initialState);
@@ -30,8 +33,7 @@ export default  function Register ()  {
 			if (reason === 'clickaway') {
 			return;
 			}
-
-				setData((state) => ({snackbarOpen:false}))
+      dispatched({type:"SNACKBAR_SET",payload:(snackbarOpen:false)});
 		};
 
    
@@ -56,7 +58,7 @@ export default  function Register ()  {
     //the second parameter is dispatch 
      RegisterCall({ username:username.current.value,
      email:email.current.value,
-     password:password.current.value},dispatch,dispatched);
+     password:password.current.value},dispatch,dispatched,navigate);
 
 
     }
@@ -100,7 +102,7 @@ export default  function Register ()  {
               )}
             
             </button>
-            <span className="loginForgot">Forgot Password?</span>
+
             <Link to="/login">
             <button className="loginRegisterButton">
 

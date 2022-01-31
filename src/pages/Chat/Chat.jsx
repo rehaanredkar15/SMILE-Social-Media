@@ -55,7 +55,7 @@ const Chat = ({socket}) => {
         useEffect(() => {
             const getConversations = async () => {
             try {
-                const res = await axios.get("https://smilesocialapp.herokuapp.com/api/conversations/" + user._id);
+                const res = await axios.get("https://smilesocial.herokuapp.com/api/conversations/" + user._id);
                 setConversations(res.data);
             } catch (err) {
                 console.log(err);
@@ -77,11 +77,11 @@ const Chat = ({socket}) => {
 
                if(user._id === currentchat.members[0] )
                {
-              const res = await axios.get(`https://smilesocialapp.herokuapp.com/api/user?userId=${currentchat.members[1]}`)
+              const res = await axios.get(`https://smilesocial.herokuapp.com/api/user?userId=${currentchat.members[1]}`)
               setCurrent(res.data);
                }
                else{
-              const res = await axios.get(`https://smilesocialapp.herokuapp.com/api/user?userId=${currentchat.members[0]}`)
+              const res = await axios.get(`https://smilesocial.herokuapp.com/api/user?userId=${currentchat.members[0]}`)
               setCurrent(res.data);
                }
             }

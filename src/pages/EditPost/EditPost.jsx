@@ -23,7 +23,7 @@ const EditPost = () => {
                 useEffect(() => {
 
          const fetchPost = async () => {
-              const res = await axios.get("https://smilesocialapp.herokuapp.com/api/posts/" + postId )
+              const res = await axios.get("https://smilesocial.herokuapp.com/api/posts/" + postId )
             
            
               setPosts(res.data);

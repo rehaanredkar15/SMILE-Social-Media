@@ -32,7 +32,7 @@ export default  function Login ()  {
 
     //the second parameter is dispatch 
      LoginCall({email:email.current.value,password:password.current.value},dispatch,dispatched);
-     LoginDetails();
+
    }
 
     

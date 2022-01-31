@@ -9,7 +9,7 @@ const Notifications = ({notifications}) => {
     useEffect(() => {
     const getUser = async () => {
       try {
-        const res = await axios.get("https://smilesocialapp.herokuapp.com/api/user?username=" + notifications.senderName);
+        const res = await axios.get("https://smilesocial.herokuapp.com/api/user?username=" + notifications.senderName);
         setUser(res.data);
       } catch (err) {
         console.log(err);

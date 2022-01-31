@@ -32,19 +32,24 @@ const ShareModal = ({ OpeningModal }) => {
      
 
      e.preventDefault();
-
-        const fetchUser = async () => {
-              const res = await axios.put("https://smilesocialapp.herokuapp.com/api/user/"+user._id,Form)
+          try {
+              const fetchUser = async () => {
+              const res = await axios.put("https://smilesocial.herokuapp.com/api/user/"+user._id,Form)
 
               localStorage.setItem('user',JSON.stringify(res.data));
+              console.log('cil')
+           fetchUser();
          }
+            // navigate('/profile/'+user.username);
+          } catch (error) {
+            console.log(error);
+          }
+      
 
-         fetchUser();
 
 
 
      OpeningModal(false);
-     navigate('/login');
    }
 
         const handleChange = (e) => setForm({ ...Form, [e.target.name]: e.target.value });

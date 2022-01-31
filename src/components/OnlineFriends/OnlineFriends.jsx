@@ -16,7 +16,7 @@ export default function OnlineFriends ({  currentId ,conversations}) {
 
   useEffect(() => {
     const getFriends = async () => {
-      const res = await axios.get("https://smilesocialapp.herokuapp.com/api/user/friends/" + currentId); 
+      const res = await axios.get("https://smilesocial.herokuapp.com/api/user/friends/" + currentId); 
       setFriends(res.data);
 
     };
@@ -51,7 +51,7 @@ export default function OnlineFriends ({  currentId ,conversations}) {
 
     try {
       const res = await axios.get(
-        `https://smilesocialapp.herokuapp.com/api/conversations/find/${currentId}/${user._id}`
+        `https://smilesocial.herokuapp.com/api/conversations/find/${currentId}/${user._id}`
       );
 
       dispatcher({type:"CURRENTCHAT_SET",payload:res.data});
@@ -64,7 +64,7 @@ export default function OnlineFriends ({  currentId ,conversations}) {
     {
          try {
 
-         const res = await axios.post(`https://smilesocialapp.herokuapp.com/api/conversations/`,members);
+         const res = await axios.post(`https://smilesocial.herokuapp.com/api/conversations/`,members);
 
         console.log(res);
         dispatcher({type:"CURRENTCHAT_SET",payload:res.data});

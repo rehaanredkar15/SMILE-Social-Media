@@ -12,7 +12,7 @@ const Conversation = ({ conversation, currentUser }) => {
 
     const getUser = async () => {
       try {
-        const res = await axios.get("https://smilesocialapp.herokuapp.com/api/user?userId=" + friendId);
+        const res = await axios.get("https://smilesocial.herokuapp.com/api/user?userId=" + friendId);
         setUser(res.data);
       } catch (err) {
         console.log(err);

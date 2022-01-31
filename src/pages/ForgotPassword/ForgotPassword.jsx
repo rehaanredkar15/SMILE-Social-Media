@@ -28,7 +28,7 @@ const ForgotPassword = () => {
 			return;
 			}
       dispatched({type:"SNACKBAR_SET",payload:(snackbarOpen:false)});
-				// snackbarOpen:false;
+		;
 		}; 
 
 

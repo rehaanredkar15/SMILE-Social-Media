@@ -8,7 +8,7 @@ export const DeletePostCall = async (userId,postId) => {
     try {
    
 
-     const res = await axios.delete("https://smilesocialapp.herokuapp.com/api/posts/" + postId );
+     const res = await axios.delete("https://smilesocial.herokuapp.com/api/posts/" + postId );
      window.location.reload(); 
     }
     catch(err)
@@ -26,7 +26,7 @@ export const UpdatePostCall = async (formdata,dispatch,postId,navigate,dispatche
     
     try {
  
-       const res = await fetch("https://smilesocialapp.herokuapp.com/api/posts/update/"+ postId  , {
+       const res = await fetch("https://smilesocial.herokuapp.com/api/posts/update/"+ postId  , {
               method: "POST",
               body: formdata,
             });

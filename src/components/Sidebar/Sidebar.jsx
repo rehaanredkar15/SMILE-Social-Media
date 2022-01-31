@@ -30,7 +30,7 @@ const Sidebar = () => {
        useEffect(() => {
 
          const fetchUser = async () => {
-              const res = await axios.get(`https://smilesocialapp.herokuapp.com/api/user?userId=${users._id}`)
+              const res = await axios.get(`https://smilesocial.herokuapp.com/api/user?userId=${users._id}`)
              //here the fetch function is required to make the api request 
               setCurrent(res.data);
               localStorage.setItem('user',JSON.stringify(res.data));
@@ -46,7 +46,7 @@ const Sidebar = () => {
      useEffect(() => {
 
          const fetchPost = async () => {
-               await fetch("https://smilesocialapp.herokuapp.com/api/user/userprofile" , {
+               await fetch("https://smilesocial.herokuapp.com/api/user/userprofile" , {
               method: "GET",
             }).then(res => res.json())
               .then(data => setFriends(data.data));
@@ -62,7 +62,7 @@ const Sidebar = () => {
      useEffect(() => {
 
          const fetchPost = async () => {
-               await fetch("https://smilesocialapp.herokuapp.com/api/user/userprofile" , {
+               await fetch("https://smilesocial.herokuapp.com/api/user/userprofile" , {
               method: "GET",
             }).then(res => res.json())
               .then(data => setOnUsers(data.data));

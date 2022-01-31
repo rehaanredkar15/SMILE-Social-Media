@@ -66,16 +66,7 @@ const UserProfile = () => {
 
       const scrollToTop = () => window.scrollTo({ top: section.current.offsetTop, behavior: "smooth" });
    
-     useEffect(() => {
-
-         const fetchUser = async () => {
-              const res = await axios.get(`https://smilesocialapp.herokuapp.com/api/user?username=${username}`)
-             //here the fetch function is required to make the api request 
-              setUsers(res.data);
-         }
-         fetchUser();
-     }, [username])
-
+    console.log(user);
 
     const handleChange = ()=>{
 

@@ -31,7 +31,7 @@ const ResetPassword = () => {
 			return;
 			}
       dispatched({type:"SNACKBAR_SET",payload:(snackbarOpen:false)});
-				// snackbarOpen:false;
+			
 		}; 
 
 
@@ -40,9 +40,6 @@ const ResetPassword = () => {
    const handleClick = (e) => {
      
      e.preventDefault();
-
-     console.log("bas hai na chote");
-    //the second parameter is dispatch 
       ResetPasswordCall({password:password.current.value},resetToken,navigate,dispatched);
    }
 

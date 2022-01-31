@@ -27,7 +27,7 @@ const Post = ({post,socket}) => {
      useEffect(() => {
 
          const fetchUser = async () => {
-              const res = await axios.get(`https://smilesocialapp.herokuapp.com/api/user?userId=${post.userId}`)
+              const res = await axios.get(`https://smilesocial.herokuapp.com/api/user?userId=${post.userId}`)
              //here the fetch function is required to make the api request 
               setUser(res.data);
          }
@@ -47,7 +47,7 @@ const Post = ({post,socket}) => {
 
     const likeHandler = () => {
         try {
-            axios.put("https://smilesocialapp.herokuapp.com/api/posts/" + post._id + "/like",{ userId:currentUser._id});
+            axios.put("https://smilesocial.herokuapp.com/api/posts/" + post._id + "/like",{ userId:currentUser._id});
 
              socket.emit("sendNotification", {
                 senderName: currentUser.username,
