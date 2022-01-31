@@ -55,6 +55,9 @@ const Share = ({postId}) => {
       photoUrl:"",
       };
       
+        const reset = () => {
+        desc.current.value = "";
+      };
 
     try {
 
@@ -94,7 +97,8 @@ const Share = ({postId}) => {
              }
 
               setFile(null);
-               desc.current.reset();
+               reset();
+           
            } catch (err) {
             console.log(err.message)
           }

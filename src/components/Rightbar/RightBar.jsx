@@ -149,7 +149,7 @@ export default function RightBar({users,socket}){
                   <li className="sidebarListItem">
                   <img src="https://github.com/rehaanredkar15/SMILE-Social-Media/blob/master/public/Assets/Icons/userEdt.png?raw=true" alt="" className="Icons"/>
                    <Link to = {`/userProfile/${CurrentUser.username}`} style={{textDecoration:"none"}}> 
-                   <span className="sidebarListItemText">Edit  Profile</span>
+                   <span className="sidebarListItemText">Edit Profile</span>
                    </Link>
                   </li>
                   
